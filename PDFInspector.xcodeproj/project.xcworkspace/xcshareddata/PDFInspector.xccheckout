@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9002BB94-C86C-428D-8659-C4034B4105D6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PDFInspector</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>44FF0A8E-FB5E-44C8-9C3F-D662E54D109B</key>
+		<string>https://github.com/vmagaziy/PDFInspector.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PDFInspector/PDFInspector.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>44FF0A8E-FB5E-44C8-9C3F-D662E54D109B</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/vmagaziy/PDFInspector.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>44FF0A8E-FB5E-44C8-9C3F-D662E54D109B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>44FF0A8E-FB5E-44C8-9C3F-D662E54D109B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PDFInspector</string>
+		</dict>
+	</array>
+</dict>
+</plist>
