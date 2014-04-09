@@ -12,7 +12,7 @@
 		6785ED5718EEA29C00176C09 /* WLPrefix.h in Sources */ = {isa = PBXBuildFile; fileRef = 6785ED5618EEA29C00176C09 /* WLPrefix.h */; };
 		6785ED5B18EEA29C00176C09 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6785ED5918EEA29C00176C09 /* Credits.rtf */; };
 		6785ED5E18EEA29C00176C09 /* WLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 6785ED5D18EEA29C00176C09 /* WLDocument.m */; };
-		6785ED6118EEA29C00176C09 /* VMDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6785ED5F18EEA29C00176C09 /* VMDocument.xib */; };
+		6785ED6118EEA29C00176C09 /* WLDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6785ED5F18EEA29C00176C09 /* WLDocument.xib */; };
 		6785ED6418EEA29C00176C09 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6785ED6218EEA29C00176C09 /* MainMenu.xib */; };
 		6785ED6D18EEA29C00176C09 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6785ED6C18EEA29C00176C09 /* XCTest.framework */; };
 		6785ED6E18EEA29C00176C09 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6785ED4A18EEA29C00176C09 /* Cocoa.framework */; };
@@ -43,7 +43,7 @@
 		6785ED5A18EEA29C00176C09 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		6785ED5C18EEA29C00176C09 /* WLDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLDocument.h; sourceTree = "<group>"; };
 		6785ED5D18EEA29C00176C09 /* WLDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLDocument.m; sourceTree = "<group>"; };
-		6785ED6018EEA29C00176C09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/VMDocument.xib; sourceTree = "<group>"; };
+		6785ED6018EEA29C00176C09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WLDocument.xib; sourceTree = "<group>"; };
 		6785ED6318EEA29C00176C09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		6785ED6B18EEA29C00176C09 /* PDFInspectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PDFInspectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6785ED6C18EEA29C00176C09 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -112,7 +112,7 @@
 			children = (
 				6785ED5118EEA29C00176C09 /* Supporting Files */,
 				6785ED5218EEA29C00176C09 /* PDFInspector-Info.plist */,
-				6785ED5F18EEA29C00176C09 /* VMDocument.xib */,
+				6785ED5F18EEA29C00176C09 /* WLDocument.xib */,
 				6785ED6218EEA29C00176C09 /* MainMenu.xib */,
 			);
 			path = Resources;
@@ -234,7 +234,7 @@
 			files = (
 				6785ED5518EEA29C00176C09 /* InfoPlist.strings in Resources */,
 				6785ED5B18EEA29C00176C09 /* Credits.rtf in Resources */,
-				6785ED6118EEA29C00176C09 /* VMDocument.xib in Resources */,
+				6785ED6118EEA29C00176C09 /* WLDocument.xib in Resources */,
 				6785ED6418EEA29C00176C09 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,12 +297,12 @@
 			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
-		6785ED5F18EEA29C00176C09 /* VMDocument.xib */ = {
+		6785ED5F18EEA29C00176C09 /* WLDocument.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6785ED6018EEA29C00176C09 /* Base */,
 			);
-			name = VMDocument.xib;
+			name = WLDocument.xib;
 			sourceTree = "<group>";
 		};
 		6785ED6218EEA29C00176C09 /* MainMenu.xib */ = {
