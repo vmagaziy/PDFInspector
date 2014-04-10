@@ -14,13 +14,16 @@
 		6785ED5E18EEA29C00176C09 /* WLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 6785ED5D18EEA29C00176C09 /* WLDocument.m */; };
 		6785ED6118EEA29C00176C09 /* WLDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6785ED5F18EEA29C00176C09 /* WLDocument.xib */; };
 		6785ED6418EEA29C00176C09 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6785ED6218EEA29C00176C09 /* MainMenu.xib */; };
-		6785ED6D18EEA29C00176C09 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6785ED6C18EEA29C00176C09 /* XCTest.framework */; };
 		6785ED6E18EEA29C00176C09 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6785ED4A18EEA29C00176C09 /* Cocoa.framework */; };
 		6785ED8F18EEBD0500176C09 /* WLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6785ED5818EEA29C00176C09 /* WLMain.m */; };
 		6785ED9018EEBD0C00176C09 /* WLPDFName.m in Sources */ = {isa = PBXBuildFile; fileRef = 6785ED8518EEBAD200176C09 /* WLPDFName.m */; };
 		6785ED9118EEBD0E00176C09 /* WLPDFNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6785ED8718EEBAD200176C09 /* WLPDFNode.m */; };
 		6785ED9218EEBD1200176C09 /* WLPDFObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6785ED8918EEBAD200176C09 /* WLPDFObject.m */; };
 		6785ED9318EEBD1500176C09 /* WLPDFScalarTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 6785ED8C18EEBAD200176C09 /* WLPDFScalarTypes.m */; };
+		67CDF95318F583A80024E85B /* WLPDFArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CDF95218F583A80024E85B /* WLPDFArray.m */; };
+		67CDF95618F589020024E85B /* WLPDFDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CDF95518F589020024E85B /* WLPDFDictionary.m */; };
+		67CDF9B218F6A0D70024E85B /* WLPDFNodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CDF9B118F6A0D70024E85B /* WLPDFNodeTests.m */; };
+		67CDF9B818F6A3080024E85B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67CDF9B718F6A3080024E85B /* SenTestingKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +34,48 @@
 			remoteGlobalIDString = 6785ED4618EEA29C00176C09;
 			remoteInfo = PDFInspector;
 		};
+		67CDF96118F69E5E0024E85B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67CDF95818F69E5E0024E85B /* Kiwi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F5015B9F11583A77002E9A98;
+			remoteInfo = Kiwi;
+		};
+		67CDF96318F69E5E0024E85B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67CDF95818F69E5E0024E85B /* Kiwi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 832C83C7157263B300F160D5;
+			remoteInfo = "Kiwi-OSX";
+		};
+		67CDF96518F69E5E0024E85B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67CDF95818F69E5E0024E85B /* Kiwi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F5015C9E11584017002E9A98;
+			remoteInfo = KiwiTests;
+		};
+		67CDF96718F69E5E0024E85B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67CDF95818F69E5E0024E85B /* Kiwi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DA084E7317E3838100592D5A;
+			remoteInfo = "Kiwi-XCTest";
+		};
+		67CDF96918F69E5E0024E85B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67CDF95818F69E5E0024E85B /* Kiwi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DA084D3E17E3804200592D5A;
+			remoteInfo = KiwiXCTests;
+		};
+		67CDF9B518F6A18E0024E85B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67CDF95818F69E5E0024E85B /* Kiwi.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 832C8323157263B300F160D5;
+			remoteInfo = "Kiwi-OSX";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -38,14 +83,14 @@
 		6785ED4A18EEA29C00176C09 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		6785ED5218EEA29C00176C09 /* PDFInspector-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PDFInspector-Info.plist"; sourceTree = "<group>"; };
 		6785ED5418EEA29C00176C09 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6785ED5618EEA29C00176C09 /* WLPrefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLPrefix.h; sourceTree = "<group>"; };
+		6785ED5618EEA29C00176C09 /* WLPrefix.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc.preprocessed; path = WLPrefix.h; sourceTree = "<group>"; };
 		6785ED5818EEA29C00176C09 /* WLMain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMain.m; sourceTree = "<group>"; };
 		6785ED5A18EEA29C00176C09 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		6785ED5C18EEA29C00176C09 /* WLDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLDocument.h; sourceTree = "<group>"; };
 		6785ED5D18EEA29C00176C09 /* WLDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLDocument.m; sourceTree = "<group>"; };
 		6785ED6018EEA29C00176C09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WLDocument.xib; sourceTree = "<group>"; };
 		6785ED6318EEA29C00176C09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		6785ED6B18EEA29C00176C09 /* PDFInspectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PDFInspectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6785ED6B18EEA29C00176C09 /* PDFInspectorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PDFInspectorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6785ED6C18EEA29C00176C09 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6785ED8418EEBAD200176C09 /* WLPDFName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLPDFName.h; sourceTree = "<group>"; };
 		6785ED8518EEBAD200176C09 /* WLPDFName.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLPDFName.m; sourceTree = "<group>"; };
@@ -56,6 +101,14 @@
 		6785ED8A18EEBAD200176C09 /* WLPDFObjectInternal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLPDFObjectInternal.h; sourceTree = "<group>"; };
 		6785ED8B18EEBAD200176C09 /* WLPDFScalarTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLPDFScalarTypes.h; sourceTree = "<group>"; };
 		6785ED8C18EEBAD200176C09 /* WLPDFScalarTypes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLPDFScalarTypes.m; sourceTree = "<group>"; };
+		67CDF95118F583A80024E85B /* WLPDFArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLPDFArray.h; sourceTree = "<group>"; };
+		67CDF95218F583A80024E85B /* WLPDFArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLPDFArray.m; sourceTree = "<group>"; };
+		67CDF95418F589020024E85B /* WLPDFDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLPDFDictionary.h; sourceTree = "<group>"; };
+		67CDF95518F589020024E85B /* WLPDFDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLPDFDictionary.m; sourceTree = "<group>"; };
+		67CDF95818F69E5E0024E85B /* Kiwi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Kiwi.xcodeproj; path = Kiwi/Kiwi.xcodeproj; sourceTree = "<group>"; };
+		67CDF9AF18F6A0800024E85B /* PDFInspectorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PDFInspectorTests-Info.plist"; sourceTree = "<group>"; };
+		67CDF9B118F6A0D70024E85B /* WLPDFNodeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLPDFNodeTests.m; sourceTree = "<group>"; };
+		67CDF9B718F6A3080024E85B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +124,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67CDF9B818F6A3080024E85B /* SenTestingKit.framework in Frameworks */,
 				6785ED6E18EEA29C00176C09 /* Cocoa.framework in Frameworks */,
-				6785ED6D18EEA29C00176C09 /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +135,7 @@
 		6785ED3E18EEA29C00176C09 = {
 			isa = PBXGroup;
 			children = (
+				67CDF95818F69E5E0024E85B /* Kiwi.xcodeproj */,
 				6785ED8218EEBA7F00176C09 /* Sources */,
 				6785ED5018EEA29C00176C09 /* Resources */,
 				6785ED4918EEA29C00176C09 /* Frameworks */,
@@ -93,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				6785ED4718EEA29C00176C09 /* PDFInspector.app */,
-				6785ED6B18EEA29C00176C09 /* PDFInspectorTests.xctest */,
+				6785ED6B18EEA29C00176C09 /* PDFInspectorTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,6 +155,7 @@
 		6785ED4918EEA29C00176C09 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				67CDF9B718F6A3080024E85B /* SenTestingKit.framework */,
 				6785ED4A18EEA29C00176C09 /* Cocoa.framework */,
 				6785ED6C18EEA29C00176C09 /* XCTest.framework */,
 			);
@@ -112,6 +167,7 @@
 			children = (
 				6785ED5118EEA29C00176C09 /* Supporting Files */,
 				6785ED5218EEA29C00176C09 /* PDFInspector-Info.plist */,
+				67CDF9AF18F6A0800024E85B /* PDFInspectorTests-Info.plist */,
 				6785ED5F18EEA29C00176C09 /* WLDocument.xib */,
 				6785ED6218EEA29C00176C09 /* MainMenu.xib */,
 			);
@@ -142,6 +198,10 @@
 		6785ED8318EEBAA900176C09 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				67CDF95418F589020024E85B /* WLPDFDictionary.h */,
+				67CDF95518F589020024E85B /* WLPDFDictionary.m */,
+				67CDF95118F583A80024E85B /* WLPDFArray.h */,
+				67CDF95218F583A80024E85B /* WLPDFArray.m */,
 				6785ED8418EEBAD200176C09 /* WLPDFName.h */,
 				6785ED8518EEBAD200176C09 /* WLPDFName.m */,
 				6785ED8A18EEBAD200176C09 /* WLPDFObjectInternal.h */,
@@ -151,8 +211,21 @@
 				6785ED8918EEBAD200176C09 /* WLPDFObject.m */,
 				6785ED8618EEBAD200176C09 /* WLPDFNode.h */,
 				6785ED8718EEBAD200176C09 /* WLPDFNode.m */,
+				67CDF9B118F6A0D70024E85B /* WLPDFNodeTests.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		67CDF95918F69E5E0024E85B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				67CDF96218F69E5E0024E85B /* libKiwi.a */,
+				67CDF96418F69E5E0024E85B /* libKiwi-OSX.a */,
+				67CDF96618F69E5E0024E85B /* KiwiTests.octest */,
+				67CDF96818F69E5E0024E85B /* libKiwi-XCTest.a */,
+				67CDF96A18F69E5E0024E85B /* KiwiXCTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +252,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6785ED7E18EEA29C00176C09 /* Build configuration list for PBXNativeTarget "PDFInspectorTests" */;
 			buildPhases = (
+				67CDF9BF18F6B0910024E85B /* Convert Kiwi Static Library to Dynamic One */,
 				6785ED6718EEA29C00176C09 /* Sources */,
 				6785ED6818EEA29C00176C09 /* Frameworks */,
 				6785ED6918EEA29C00176C09 /* Resources */,
@@ -186,11 +260,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				67CDF9B618F6A18E0024E85B /* PBXTargetDependency */,
 				6785ED7018EEA29C00176C09 /* PBXTargetDependency */,
 			);
 			name = PDFInspectorTests;
 			productName = PDFInspectorTests;
-			productReference = 6785ED6B18EEA29C00176C09 /* PDFInspectorTests.xctest */;
+			productReference = 6785ED6B18EEA29C00176C09 /* PDFInspectorTests.octest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -199,7 +274,7 @@
 		6785ED3F18EEA29C00176C09 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = VM;
+				CLASSPREFIX = WL;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Vladimir Magaziy";
 				TargetAttributes = {
@@ -219,6 +294,12 @@
 			mainGroup = 6785ED3E18EEA29C00176C09;
 			productRefGroup = 6785ED4818EEA29C00176C09 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 67CDF95918F69E5E0024E85B /* Products */;
+					ProjectRef = 67CDF95818F69E5E0024E85B /* Kiwi.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				6785ED4618EEA29C00176C09 /* PDFInspector */,
@@ -226,6 +307,44 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		67CDF96218F69E5E0024E85B /* libKiwi.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libKiwi.a;
+			remoteRef = 67CDF96118F69E5E0024E85B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		67CDF96418F69E5E0024E85B /* libKiwi-OSX.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libKiwi-OSX.a";
+			remoteRef = 67CDF96318F69E5E0024E85B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		67CDF96618F69E5E0024E85B /* KiwiTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = KiwiTests.octest;
+			remoteRef = 67CDF96518F69E5E0024E85B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		67CDF96818F69E5E0024E85B /* libKiwi-XCTest.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libKiwi-XCTest.a";
+			remoteRef = 67CDF96718F69E5E0024E85B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		67CDF96A18F69E5E0024E85B /* KiwiXCTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = KiwiXCTests.xctest;
+			remoteRef = 67CDF96918F69E5E0024E85B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6785ED4518EEA29C00176C09 /* Resources */ = {
@@ -248,6 +367,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		67CDF9BF18F6B0910024E85B /* Convert Kiwi Static Library to Dynamic One */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Convert Kiwi Static Library to Dynamic One";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "libtool -dynamic -o \"$CONFIGURATION_BUILD_DIR/libKiwi-OSX.dylib\" -F$DEVELOPER_FRAMEWORKS_DIR_QUOTED -framework SenTestingKit -framework Foundation -lSystem $SRCROOT/Kiwi/build/$CONFIGURATION/libKiwi-OSX.a";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6785ED4318EEA29C00176C09 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -256,8 +392,10 @@
 				6785ED9218EEBD1200176C09 /* WLPDFObject.m in Sources */,
 				6785ED9018EEBD0C00176C09 /* WLPDFName.m in Sources */,
 				6785ED9318EEBD1500176C09 /* WLPDFScalarTypes.m in Sources */,
+				67CDF95318F583A80024E85B /* WLPDFArray.m in Sources */,
 				6785ED8F18EEBD0500176C09 /* WLMain.m in Sources */,
 				6785ED5718EEA29C00176C09 /* WLPrefix.h in Sources */,
+				67CDF95618F589020024E85B /* WLPDFDictionary.m in Sources */,
 				6785ED5E18EEA29C00176C09 /* WLDocument.m in Sources */,
 				6785ED9118EEBD0E00176C09 /* WLPDFNode.m in Sources */,
 			);
@@ -267,6 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67CDF9B218F6A0D70024E85B /* WLPDFNodeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +416,11 @@
 			isa = PBXTargetDependency;
 			target = 6785ED4618EEA29C00176C09 /* PDFInspector */;
 			targetProxy = 6785ED6F18EEA29C00176C09 /* PBXContainerItemProxy */;
+		};
+		67CDF9B618F6A18E0024E85B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Kiwi-OSX";
+			targetProxy = 67CDF9B518F6A18E0024E85B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -422,15 +566,21 @@
 					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PDFInspector/PDFInspector-Prefix.pch";
+				GCC_PREFIX_HEADER = Sources/WLPrefix.h;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "PDFInspectorTests/PDFInspectorTests-Info.plist";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$SRCROOT/Kiwi/**",
+				);
+				INFOPLIST_FILE = "Resources/PDFInspectorTests-Info.plist";
+				OTHER_LDFLAGS = "-lKiwi-OSX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
+				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -444,11 +594,17 @@
 					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PDFInspector/PDFInspector-Prefix.pch";
-				INFOPLIST_FILE = "PDFInspectorTests/PDFInspectorTests-Info.plist";
+				GCC_PREFIX_HEADER = Sources/WLPrefix.h;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$SRCROOT/Kiwi/**",
+				);
+				INFOPLIST_FILE = "Resources/PDFInspectorTests-Info.plist";
+				OTHER_LDFLAGS = "-lKiwi-OSX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
+				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
