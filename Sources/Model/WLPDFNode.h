@@ -14,14 +14,14 @@
 // objects, for instance: numbers, strings and names).
 @interface WLPDFNode : NSObject
 
-@property(nonatomic, copy) NSString* name;
+@property(nonatomic, copy, readonly) NSString* name;
 
 @property(nonatomic, weak) WLPDFNode* parent;
 @property(nonatomic, strong) NSArray* children;
 
 @property(nonatomic, readonly) WLPDFDocument* document;
 
-@property(nonatomic, readonly) NSDictionary* childrenDictionary;
+@property(nonatomic, strong) NSDictionary* childrenDictionary;
 - (WLPDFNode*)childWithName:(NSString*)name;
 
 @end

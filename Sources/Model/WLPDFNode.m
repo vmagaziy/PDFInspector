@@ -10,13 +10,15 @@
 }
 
 - (NSDictionary*)childrenDictionary {
-  // TODO: Cache it if needed
-	NSMutableDictionary* dictionary = [NSMutableDictionary
-      dictionaryWithCapacity:[self.children count]];
-  for (WLPDFNode* node in self.children) {
-    dictionary[node.name] = node;
+  if (!_childrenDictionary) {
+    NSMutableDictionary* dictionary = [NSMutableDictionary
+        dictionaryWithCapacity:[self.children count]];
+    for (WLPDFNode* node in self.children) {
+      dictionary[node.name] = node;
+    }
+    _childrenDictionary = [NSDictionary dictionaryWithDictionary:dictionary];
   }
-  return [NSDictionary dictionaryWithDictionary:dictionary];
+  return _childrenDictionary;
 }
 
 - (WLPDFNode*)childWithName:(NSString*)name {
