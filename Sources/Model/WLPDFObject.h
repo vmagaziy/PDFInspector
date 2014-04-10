@@ -15,7 +15,7 @@
 
 @property(nonatomic, readonly) NSString* typeName;
 
-@property(nonatomic, copy, readonly) NSString* stringRepresentation;
+@property(nonatomic, copy) NSString* stringRepresentation;
 @property(nonatomic, strong, readonly) NSData* dataRepresentation;
 
 @end

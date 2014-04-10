@@ -54,6 +54,11 @@
 	return self;
 }
 
+- (NSString*)typeName {
+  return NSLocalizedString(@"<unknown>",
+      @"Name of unknown type for PDF objects");
+}
+
 - (NSData*)dataRepresentation {
   return [self.stringRepresentation dataUsingEncoding:NSUTF8StringEncoding];
 }
