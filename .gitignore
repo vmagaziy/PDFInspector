@@ -1,3 +1,26 @@
+.DS_Store
+.localized
+
+# Build directory
+build/
+Kiwi/build/
+ 
+# XCode user specific files
+xcuserdata/
+*.xcworkspace/
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.pbxuser
+output
+
+# AppCode files
+.idea
+
+# raw logs
+xcodebuild.log
+xcodebuild_error.log
+
 # CocoaPods
 #
 # We recommend against adding the Pods directory to your .gitignore. However
