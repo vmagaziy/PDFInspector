@@ -20,6 +20,11 @@
 		6785ED9118EEBD0E00176C09 /* WLPDFNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6785ED8718EEBAD200176C09 /* WLPDFNode.m */; };
 		6785ED9218EEBD1200176C09 /* WLPDFObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6785ED8918EEBAD200176C09 /* WLPDFObject.m */; };
 		6785ED9318EEBD1500176C09 /* WLPDFScalarTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 6785ED8C18EEBAD200176C09 /* WLPDFScalarTypes.m */; };
+		67A21B1518F7FCEA001CB350 /* WLPDFDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A21B1418F7FCEA001CB350 /* WLPDFDocument.m */; };
+		67A21B1C18F8276E001CB350 /* WLPDFDocumentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A21B1B18F8276E001CB350 /* WLPDFDocumentTests.m */; };
+		67A21B1E18F82C9A001CB350 /* test.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 67A21B1D18F82C9A001CB350 /* test.pdf */; };
+		67A21B2118F8308B001CB350 /* WLPDFPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A21B2018F8308B001CB350 /* WLPDFPage.m */; };
+		67A21B2418F83C9C001CB350 /* WLPDFStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A21B2318F83C9C001CB350 /* WLPDFStream.m */; };
 		67CDF95318F583A80024E85B /* WLPDFArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CDF95218F583A80024E85B /* WLPDFArray.m */; };
 		67CDF95618F589020024E85B /* WLPDFDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CDF95518F589020024E85B /* WLPDFDictionary.m */; };
 		67CDF9B218F6A0D70024E85B /* WLPDFNodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CDF9B118F6A0D70024E85B /* WLPDFNodeTests.m */; };
@@ -101,6 +106,14 @@
 		6785ED8A18EEBAD200176C09 /* WLPDFObjectInternal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLPDFObjectInternal.h; sourceTree = "<group>"; };
 		6785ED8B18EEBAD200176C09 /* WLPDFScalarTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLPDFScalarTypes.h; sourceTree = "<group>"; };
 		6785ED8C18EEBAD200176C09 /* WLPDFScalarTypes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLPDFScalarTypes.m; sourceTree = "<group>"; };
+		67A21B1318F7FCEA001CB350 /* WLPDFDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLPDFDocument.h; sourceTree = "<group>"; };
+		67A21B1418F7FCEA001CB350 /* WLPDFDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLPDFDocument.m; sourceTree = "<group>"; };
+		67A21B1B18F8276E001CB350 /* WLPDFDocumentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLPDFDocumentTests.m; sourceTree = "<group>"; };
+		67A21B1D18F82C9A001CB350 /* test.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = test.pdf; sourceTree = "<group>"; };
+		67A21B1F18F8308B001CB350 /* WLPDFPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLPDFPage.h; sourceTree = "<group>"; };
+		67A21B2018F8308B001CB350 /* WLPDFPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLPDFPage.m; sourceTree = "<group>"; };
+		67A21B2218F83C9C001CB350 /* WLPDFStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLPDFStream.h; sourceTree = "<group>"; };
+		67A21B2318F83C9C001CB350 /* WLPDFStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLPDFStream.m; sourceTree = "<group>"; };
 		67CDF95118F583A80024E85B /* WLPDFArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLPDFArray.h; sourceTree = "<group>"; };
 		67CDF95218F583A80024E85B /* WLPDFArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLPDFArray.m; sourceTree = "<group>"; };
 		67CDF95418F589020024E85B /* WLPDFDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLPDFDictionary.h; sourceTree = "<group>"; };
@@ -170,6 +183,7 @@
 				67CDF9AF18F6A0800024E85B /* PDFInspectorTests-Info.plist */,
 				6785ED5F18EEA29C00176C09 /* WLDocument.xib */,
 				6785ED6218EEA29C00176C09 /* MainMenu.xib */,
+				67A21B1D18F82C9A001CB350 /* test.pdf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -198,6 +212,13 @@
 		6785ED8318EEBAA900176C09 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				67A21B1318F7FCEA001CB350 /* WLPDFDocument.h */,
+				67A21B1418F7FCEA001CB350 /* WLPDFDocument.m */,
+				67A21B1B18F8276E001CB350 /* WLPDFDocumentTests.m */,
+				67A21B1F18F8308B001CB350 /* WLPDFPage.h */,
+				67A21B2018F8308B001CB350 /* WLPDFPage.m */,
+				67A21B2218F83C9C001CB350 /* WLPDFStream.h */,
+				67A21B2318F83C9C001CB350 /* WLPDFStream.m */,
 				67CDF95418F589020024E85B /* WLPDFDictionary.h */,
 				67CDF95518F589020024E85B /* WLPDFDictionary.m */,
 				67CDF95118F583A80024E85B /* WLPDFArray.h */,
@@ -362,6 +383,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67A21B1E18F82C9A001CB350 /* test.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +411,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67A21B1518F7FCEA001CB350 /* WLPDFDocument.m in Sources */,
+				67A21B2418F83C9C001CB350 /* WLPDFStream.m in Sources */,
+				67A21B2118F8308B001CB350 /* WLPDFPage.m in Sources */,
 				6785ED9218EEBD1200176C09 /* WLPDFObject.m in Sources */,
 				6785ED9018EEBD0C00176C09 /* WLPDFName.m in Sources */,
 				6785ED9318EEBD1500176C09 /* WLPDFScalarTypes.m in Sources */,
@@ -405,6 +430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67A21B1C18F8276E001CB350 /* WLPDFDocumentTests.m in Sources */,
 				67CDF9B218F6A0D70024E85B /* WLPDFNodeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

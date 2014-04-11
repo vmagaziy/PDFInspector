@@ -12,6 +12,8 @@
 	<dict>
 		<key>44FF0A8E-FB5E-44C8-9C3F-D662E54D109B</key>
 		<string>https://github.com/vmagaziy/PDFInspector.git</string>
+		<key>CEB50728-0FF3-4B3B-A49C-8581C0018BF4</key>
+		<string>https://github.com/allending/Kiwi.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>PDFInspector/PDFInspector.xcodeproj/project.xcworkspace</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>44FF0A8E-FB5E-44C8-9C3F-D662E54D109B</key>
 		<string>../../..</string>
+		<key>CEB50728-0FF3-4B3B-A49C-8581C0018BF4</key>
+		<string>../../Kiwi</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/vmagaziy/PDFInspector.git</string>
@@ -28,6 +32,14 @@
 	<string>44FF0A8E-FB5E-44C8-9C3F-D662E54D109B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CEB50728-0FF3-4B3B-A49C-8581C0018BF4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Kiwi</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

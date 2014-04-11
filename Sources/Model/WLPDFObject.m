@@ -19,19 +19,21 @@
       @(kCGPDFObjectTypeName) : @[ @"WLPDFName" ],
       @(kCGPDFObjectTypeString) : @[ @"WLPDFString" ],
       @(kCGPDFObjectTypeArray) : @[ @"WLPDFArray" ],
-      @(kCGPDFObjectTypeDictionary) : @[ @"WLPDFDictionary" ],
+      @(kCGPDFObjectTypeDictionary) : @[ @"WLPDFPage", @"WLPDFDictionary" ],
       @(kCGPDFObjectTypeStream) : @[ @"WLPDFImage", @"WLPDFStream" ]
     };
+  }
+
+  if (self != [WLPDFObject class]) {
+    return [[self alloc] initWithImpl:impl name:name parent:parent];
   }
   
   NSNumber* implType = @(CGPDFObjectGetType((CGPDFObjectRef)impl));
   for (NSString* typeName in typesMap[implType]) {
     Class typeClass = NSClassFromString(typeName);
-    NSAssert(typeClass, @"Not registered class for raw type: %@, "
-        "type name: %@", implType, typeName);
-    id instance = [[typeClass alloc] initWithImpl:impl
-                                             name:name
-                                           parent:parent];
+    id instance = [typeClass objectWithImpl:impl
+                                       name:name
+                                     parent:parent];
     if (instance) {
       return instance;
     }
@@ -47,9 +49,9 @@
   NSParameterAssert(impl);
   self = [super init];
   if (self) {
-    impl = impl;
-    name = [name copy];
-    parent = [parent copy];
+    _impl = impl;
+    self.name = [name copy];
+    self.parent = parent;
   }
 	return self;
 }

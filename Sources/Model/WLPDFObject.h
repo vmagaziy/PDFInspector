@@ -13,6 +13,10 @@
                           name:(NSString*)aName
                         parent:(WLPDFNode*)aParent; // Factory method
 
+- (instancetype)initWithImpl:(void*)impl
+                        name:(NSString*)name 
+                      parent:(WLPDFNode*)parent; // Designated
+
 @property(nonatomic, readonly) NSString* typeName;
 
 @property(nonatomic, copy) NSString* stringRepresentation;

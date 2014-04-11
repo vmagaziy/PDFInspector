@@ -14,7 +14,7 @@
 // objects, for instance: numbers, strings and names).
 @interface WLPDFNode : NSObject
 
-@property(nonatomic, copy, readonly) NSString* name;
+@property(nonatomic, copy) NSString* name;
 
 @property(nonatomic, weak) WLPDFNode* parent;
 @property(nonatomic, strong) NSArray* children;

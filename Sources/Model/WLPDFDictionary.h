@@ -3,6 +3,7 @@
 
 #import "WLPDFObject.h"
 
+// Represents a dictionary of of PDF objects
 @interface WLPDFDictionary : WLPDFObject
 
 - (WLPDFObject*)objectForKey:(NSString*)key;

@@ -30,8 +30,33 @@ static void WLPDFDictionaryApplierFunction(const char* key,
 
 @implementation WLPDFDictionary
 
-- (WLPDFObject*)objectForKey:(NSString*)key {
-  return self.childrenDictionary[key];
+- (NSString*)typeName {
+  return NSLocalizedString(@"Dictionary",
+      @"Name of type for dictionary PDF objects");
+}
+
+- (NSString*)stringRepresentation {
+  NSString* stringRepresentation = [super stringRepresentation];
+  if (stringRepresentation) {
+    return stringRepresentation;
+  }
+
+  NSMutableString* mutableString = [NSMutableString stringWithString:@"{"];
+  NSArray* children = self.children;
+  NSUInteger childrenCount = children.count;
+  for (NSUInteger index = 0; index < childrenCount; ++index) {
+    WLPDFObject* object = children[index];
+    [mutableString appendFormat:@"%@ = %@", object.name, object.typeName];
+    if (index != childrenCount - 1) {
+      [mutableString appendString:@", "];
+    }
+  }
+
+  [mutableString appendString:@"}"];
+
+  NSString* immutableString = [NSString stringWithString:mutableString];
+  self.stringRepresentation = immutableString;
+  return immutableString;
 }
 
 - (NSArray*)children {
@@ -41,8 +66,10 @@ static void WLPDFDictionaryApplierFunction(const char* key,
   }
 
   CGPDFDictionaryRef rawDictionaryImpl = NULL;
-  if (!CGPDFObjectGetValue(self.impl,
-      kCGPDFObjectTypeDictionary, &rawDictionaryImpl)) {
+  if (kCGPDFObjectTypeDictionary != CGPDFObjectGetType(self.impl)) {
+    rawDictionaryImpl = (CGPDFDictionaryRef)self.impl;
+  } else if (!CGPDFObjectGetValue(self.impl, kCGPDFObjectTypeDictionary,
+      &rawDictionaryImpl)) {
     return nil;
   }
 
@@ -62,9 +89,13 @@ static void WLPDFDictionaryApplierFunction(const char* key,
   self.childrenDictionary = [NSDictionary
       dictionaryWithDictionary:mutableChildrenDictionary];
 
-  NSArray* immutableChildren = [NSArray arrayWithArray:children];
+  NSArray* immutableChildren = [NSArray arrayWithArray:mutableChildren];
   self.children = immutableChildren;
   return immutableChildren;
+}
+
+- (WLPDFObject*)objectForKey:(NSString*)key {
+  return self.childrenDictionary[key];
 }
 
 @end

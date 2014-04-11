@@ -38,7 +38,7 @@
     [mutableChildren addObject:child];
   }
 
-  NSArray* immutableChildren = [NSArray arrayWithArray:children];
+  NSArray* immutableChildren = [NSArray arrayWithArray:mutableChildren];
   self.children = immutableChildren;
   return immutableChildren;
 }
@@ -57,12 +57,13 @@
   NSUInteger count = self.count;
   for (NSUInteger index = 0; index < count; ++index) {
     WLPDFObject* element = [self objectAtIndex:index];
-    NSString* typeName = element.typeName;
-    [mutableString appendString:typeName];
+    [mutableString appendString:element.typeName];
     if (index != count - 1) {
       [mutableString appendString:@", "];
     }
   }
+
+  [mutableString appendString:@"]"];
 
   NSString* immutableString = [NSString stringWithString:mutableString];
   self.stringRepresentation = immutableString;
