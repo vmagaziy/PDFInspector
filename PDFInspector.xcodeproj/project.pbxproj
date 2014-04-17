@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6725F55A190008EB004D7D20 /* WLPDFPageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725F559190008EB004D7D20 /* WLPDFPageTests.m */; };
 		6785ED4B18EEA29C00176C09 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6785ED4A18EEA29C00176C09 /* Cocoa.framework */; };
 		6785ED5518EEA29C00176C09 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6785ED5318EEA29C00176C09 /* InfoPlist.strings */; };
 		6785ED5718EEA29C00176C09 /* WLPrefix.h in Sources */ = {isa = PBXBuildFile; fileRef = 6785ED5618EEA29C00176C09 /* WLPrefix.h */; };
@@ -84,6 +85,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6725F559190008EB004D7D20 /* WLPDFPageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLPDFPageTests.m; sourceTree = "<group>"; };
 		6785ED4718EEA29C00176C09 /* PDFInspector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDFInspector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6785ED4A18EEA29C00176C09 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		6785ED5218EEA29C00176C09 /* PDFInspector-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PDFInspector-Info.plist"; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				67A21B1B18F8276E001CB350 /* WLPDFDocumentTests.m */,
 				67A21B1F18F8308B001CB350 /* WLPDFPage.h */,
 				67A21B2018F8308B001CB350 /* WLPDFPage.m */,
+				6725F559190008EB004D7D20 /* WLPDFPageTests.m */,
 				67A21B2218F83C9C001CB350 /* WLPDFStream.h */,
 				67A21B2318F83C9C001CB350 /* WLPDFStream.m */,
 				67CDF95418F589020024E85B /* WLPDFDictionary.h */,
@@ -432,6 +435,7 @@
 			files = (
 				67A21B1C18F8276E001CB350 /* WLPDFDocumentTests.m in Sources */,
 				67CDF9B218F6A0D70024E85B /* WLPDFNodeTests.m in Sources */,
+				6725F55A190008EB004D7D20 /* WLPDFPageTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
