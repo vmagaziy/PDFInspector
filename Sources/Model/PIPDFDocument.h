@@ -10,6 +10,7 @@
 + (instancetype)documentWithContentsOfURL:(NSURL*)url;
 
 @property(nonatomic, readonly) PIPDFDictionary* catalog;
+@property(nonatomic, readonly) PIPDFDictionary* info;
 @property(nonatomic, readonly) NSArray* pages;
 
 @end

@@ -32,4 +32,12 @@
   XCTAssertEqual(self.document.pages.count, (NSUInteger)10);
 }
 
+- (void)testThatDocumentDoesNotHaveInfo {
+  XCTAssertNil(self.document.info);
+}
+
+- (void)testThatDocumentHasNameEqualToLastPathComponentOfURL {
+  XCTAssertEqualObjects(self.document.name, @"test.pdf");
+}
+
 @end

@@ -45,6 +45,7 @@ static void PIExtractPages(NSMutableArray* pages, PIPDFObject* object) {
 
 @property(nonatomic, readwrite) NSArray* pages;
 @property(nonatomic, readwrite) PIPDFDictionary* catalog;
+@property(nonatomic, readwrite) PIPDFDictionary* info;
 
 @end
 
@@ -58,7 +59,9 @@ static void PIExtractPages(NSMutableArray* pages, PIPDFObject* object) {
     CGDataProviderRelease(dataProvider);
 
     if (impl) {
-      return [[self alloc] initWithImpl:impl name:nil parent:nil];
+      return [[self alloc] initWithImpl:impl
+                                   name:url.absoluteString.lastPathComponent
+                                 parent:nil];
     }
   }
 
@@ -83,6 +86,17 @@ static void PIExtractPages(NSMutableArray* pages, PIPDFObject* object) {
     }
   }
   return _catalog;
+}
+
+- (PIPDFDictionary*)info {
+  if (!_info) {
+    CGPDFDictionaryRef rawInfo =
+        CGPDFDocumentGetInfo((CGPDFDocumentRef)self.impl);
+    if (rawInfo) {
+      _info = [PIPDFDictionary objectWithImpl:rawInfo name:nil parent:self];
+    }
+  }
+  return _info;
 }
 
 - (NSArray*)pages {
