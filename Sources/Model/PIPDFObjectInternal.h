@@ -1,6 +1,7 @@
 // PDFInspector
 // Author: Vladimir Magaziy <vmagaziy@gmail.com>
 
+@import CoreGraphics;
 #import "PIPDFObject.h"
 
 @interface PIPDFObject ()

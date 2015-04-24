@@ -1,6 +1,7 @@
 // PDFInspector
 // Author: Vladimir Magaziy <vmagaziy@gmail.com>
 
+@import CoreGraphics; // CGRect
 #import "PIPDFDictionary.h"
 
 // Represents a PDF page
