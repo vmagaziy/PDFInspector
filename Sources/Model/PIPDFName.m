@@ -1,17 +1,17 @@
 // PDFInspector
 // Author: Vladimir Magaziy <vmagaziy@gmail.com>
 
-#import "WLPDFName.h"
-#import "WLPDFObjectInternal.h"
+#import "PIPDFName.h"
+#import "PIPDFObjectInternal.h"
 
-@implementation WLPDFName
+@implementation PIPDFName
 
 - (NSString*)typeName {
-	return NSLocalizedString(@"Name", @"Name of type for name PDF objects");
+  return NSLocalizedString(@"Name", @"Name of type for name PDF objects");
 }
 
 - (NSString*)stringRepresentation {
-	return self.stringValue;
+  return self.stringValue;
 }
 
 - (NSString*)stringValue {
@@ -25,8 +25,7 @@
     return nil;
   }
 
-  return [NSString stringWithCString:rawName
-                            encoding:NSASCIIStringEncoding];
+  return [NSString stringWithCString:rawName encoding:NSASCIIStringEncoding];
 }
 
 @end

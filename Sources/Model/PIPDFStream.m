@@ -1,7 +1,7 @@
 // PDFInspector
 // Author: Vladimir Magaziy <vmagaziy@gmail.com>
 
-#import "WLPDFStream.h"
+#import "PIPDFStream.h"
 
-@implementation WLPDFStream
+@implementation PIPDFStream
 @end

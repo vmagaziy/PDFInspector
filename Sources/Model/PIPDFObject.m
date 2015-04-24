@@ -1,51 +1,49 @@
 // PDFInspector
 // Author: Vladimir Magaziy <vmagaziy@gmail.com>
 
-#import "WLPDFObjectInternal.h"
+#import "PIPDFObjectInternal.h"
 
-@implementation WLPDFObject
+@implementation PIPDFObject
 
 + (instancetype)objectWithImpl:(void*)impl
                           name:(NSString*)name
-                        parent:(WLPDFNode*)parent {
+                        parent:(PIPDFNode*)parent {
   NSParameterAssert(impl);
   static NSDictionary* typesMap = nil;
   if (!typesMap) {
     typesMap = @{
-      @(kCGPDFObjectTypeNull) : @[ @"WLPDFNull" ],
-      @(kCGPDFObjectTypeBoolean) : @[ @"WLPDFBoolean" ],
-      @(kCGPDFObjectTypeInteger) : @[ @"WLPDFInteger" ],
-      @(kCGPDFObjectTypeReal) : @[ @"WLPDFReal" ],
-      @(kCGPDFObjectTypeName) : @[ @"WLPDFName" ],
-      @(kCGPDFObjectTypeString) : @[ @"WLPDFString" ],
-      @(kCGPDFObjectTypeArray) : @[ @"WLPDFArray" ],
-      @(kCGPDFObjectTypeDictionary) : @[ @"WLPDFPage", @"WLPDFDictionary" ],
-      @(kCGPDFObjectTypeStream) : @[ @"WLPDFImage", @"WLPDFStream" ]
+      @(kCGPDFObjectTypeNull) : @[ @"PIPDFNull" ],
+      @(kCGPDFObjectTypeBoolean) : @[ @"PIPDFBoolean" ],
+      @(kCGPDFObjectTypeInteger) : @[ @"PIPDFInteger" ],
+      @(kCGPDFObjectTypeReal) : @[ @"PIPDFReal" ],
+      @(kCGPDFObjectTypeName) : @[ @"PIPDFName" ],
+      @(kCGPDFObjectTypeString) : @[ @"PIPDFString" ],
+      @(kCGPDFObjectTypeArray) : @[ @"PIPDFArray" ],
+      @(kCGPDFObjectTypeDictionary) : @[ @"PIPDFPage", @"PIPDFDictionary" ],
+      @(kCGPDFObjectTypeStream) : @[ @"PIPDFImage", @"PIPDFStream" ]
     };
   }
 
-  if (self != [WLPDFObject class]) {
+  if (self != [PIPDFObject class]) {
     return [[self alloc] initWithImpl:impl name:name parent:parent];
   }
-  
+
   NSNumber* implType = @(CGPDFObjectGetType((CGPDFObjectRef)impl));
   for (NSString* typeName in typesMap[implType]) {
     Class typeClass = NSClassFromString(typeName);
-    id instance = [typeClass objectWithImpl:impl
-                                       name:name
-                                     parent:parent];
+    id instance = [typeClass objectWithImpl:impl name:name parent:parent];
     if (instance) {
       return instance;
     }
   }
-  
+
   NSLog(@"Failed to create wrapper for: %@ of type: %@", impl, implType);
   return nil;
 }
 
 - (instancetype)initWithImpl:(void*)impl
-                        name:(NSString*)name 
-                      parent:(WLPDFNode*)parent {
+                        name:(NSString*)name
+                      parent:(PIPDFNode*)parent {
   NSParameterAssert(impl);
   self = [super init];
   if (self) {
@@ -53,12 +51,12 @@
     self.name = [name copy];
     self.parent = parent;
   }
-	return self;
+  return self;
 }
 
 - (NSString*)typeName {
   return NSLocalizedString(@"<unknown>",
-      @"Name of unknown type for PDF objects");
+                           @"Name of unknown type for PDF objects");
 }
 
 - (NSData*)dataRepresentation {
@@ -66,8 +64,8 @@
 }
 
 - (NSString*)description {
-  return [NSString stringWithFormat:@"%@ { %@ }",
-      [super description], self.stringRepresentation];
+  return [NSString stringWithFormat:@"%@ { %@ }", [super description],
+                                    self.stringRepresentation];
 }
 
 - (BOOL)isEqual:(id)object {
@@ -75,7 +73,7 @@
     return NO;
   }
 
-  WLPDFObject* PDFObject = (WLPDFObject*)object;
+  PIPDFObject* PDFObject = (PIPDFObject*)object;
   if (PDFObject.impl == self.impl) {
     return YES;
   }

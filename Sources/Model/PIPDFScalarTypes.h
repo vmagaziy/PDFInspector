@@ -1,28 +1,28 @@
 // PDFInspector
 // Author: Vladimir Magaziy <vmagaziy@gmail.com>
 
-#import "WLPDFObject.h"
+#import "PIPDFObject.h"
 
 // Abstracts PDF objects that represent empty (null) values
-@interface WLPDFNull : WLPDFObject
+@interface PIPDFNull : PIPDFObject
 @end
 
 // Abstracts PDF objects that represent boolean values
-@interface WLPDFBoolean : WLPDFObject
+@interface PIPDFBoolean : PIPDFObject
 
 @property(nonatomic, readonly) BOOL booleanValue;
 
 @end
 
 // Abstracts PDF object that represent integer values
-@interface WLPDFInteger : WLPDFObject
+@interface PIPDFInteger : PIPDFObject
 
 @property(nonatomic, readonly) NSInteger integerValue;
 
 @end
 
 // Abstracts PDF object that represent floating point number values
-@interface WLPDFReal : WLPDFObject
+@interface PIPDFReal : PIPDFObject
 
 @property(nonatomic, readonly) double doubleValue;
 

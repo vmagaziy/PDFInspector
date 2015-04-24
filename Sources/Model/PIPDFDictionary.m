@@ -1,38 +1,37 @@
 // PDFInspector
 // Author: Vladimir Magaziy <vmagaziy@gmail.com>
 
-#import "WLPDFDictionary.h"
-#import "WLPDFObjectInternal.h"
+#import "PIPDFDictionary.h"
+#import "PIPDFObjectInternal.h"
 
-static const NSString* kWLPDFMutableChildrenKey = @"mutableChildren";
-static const NSString* kWLPDFMutableChildrenDictionaryKey =
+static const NSString* PIPDFMutableChildrenKey = @"mutableChildren";
+static const NSString* PIPDFMutableChildrenDictionaryKey =
     @"mutableChildrenDictionary";
-static const NSString* kWLPDFParentKey = @"parent";
+static const NSString* PIPDFParentKey = @"parent";
 
-static void WLPDFDictionaryApplierFunction(const char* key,
-    CGPDFObjectRef object, void* info) {
+static void PIPDFDictionaryApplierFunction(const char* key,
+                                           CGPDFObjectRef object,
+                                           void* info) {
   NSDictionary* userInfo = (__bridge NSDictionary*)info;
-  NSMutableArray* children = userInfo[kWLPDFMutableChildrenKey];
+  NSMutableArray* children = userInfo[PIPDFMutableChildrenKey];
   NSMutableDictionary* childrenDictionary =
-      userInfo[kWLPDFMutableChildrenDictionaryKey];
-  WLPDFObject* parent = userInfo[kWLPDFParentKey];
+      userInfo[PIPDFMutableChildrenDictionaryKey];
+  PIPDFObject* parent = userInfo[PIPDFParentKey];
 
   NSString* name = [NSString stringWithUTF8String:key];
-  WLPDFObject* child = [WLPDFObject objectWithImpl:object
-                                              name:name
-                                            parent:parent];
+  PIPDFObject* child =
+      [PIPDFObject objectWithImpl:object name:name parent:parent];
   if (child) {
     [children addObject:child];
     childrenDictionary[name] = child;
   }
 }
 
-
-@implementation WLPDFDictionary
+@implementation PIPDFDictionary
 
 - (NSString*)typeName {
   return NSLocalizedString(@"Dictionary",
-      @"Name of type for dictionary PDF objects");
+                           @"Name of type for dictionary PDF objects");
 }
 
 - (NSString*)stringRepresentation {
@@ -45,7 +44,7 @@ static void WLPDFDictionaryApplierFunction(const char* key,
   NSArray* children = self.children;
   NSUInteger childrenCount = children.count;
   for (NSUInteger index = 0; index < childrenCount; ++index) {
-    WLPDFObject* object = children[index];
+    PIPDFObject* object = children[index];
     [mutableString appendFormat:@"%@ = %@", object.name, object.typeName];
     if (index != childrenCount - 1) {
       [mutableString appendString:@", "];
@@ -69,7 +68,7 @@ static void WLPDFDictionaryApplierFunction(const char* key,
   if (kCGPDFObjectTypeDictionary != CGPDFObjectGetType(self.impl)) {
     rawDictionaryImpl = (CGPDFDictionaryRef)self.impl;
   } else if (!CGPDFObjectGetValue(self.impl, kCGPDFObjectTypeDictionary,
-      &rawDictionaryImpl)) {
+                                  &rawDictionaryImpl)) {
     return nil;
   }
 
@@ -78,23 +77,24 @@ static void WLPDFDictionaryApplierFunction(const char* key,
   NSMutableDictionary* mutableChildrenDictionary =
       [NSMutableDictionary dictionaryWithCapacity:count];
   NSDictionary* context = @{
-      kWLPDFMutableChildrenKey : mutableChildren,
-      kWLPDFMutableChildrenDictionaryKey : mutableChildrenDictionary,
-      kWLPDFParentKey : self
+    PIPDFMutableChildrenKey : mutableChildren,
+    PIPDFMutableChildrenDictionaryKey : mutableChildrenDictionary,
+    PIPDFParentKey : self
   };
 
   CGPDFDictionaryApplyFunction(rawDictionaryImpl,
-      WLPDFDictionaryApplierFunction, (__bridge void*)context);
+                               PIPDFDictionaryApplierFunction,
+                               (__bridge void*)context);
 
-  self.childrenDictionary = [NSDictionary
-      dictionaryWithDictionary:mutableChildrenDictionary];
+  self.childrenDictionary =
+      [NSDictionary dictionaryWithDictionary:mutableChildrenDictionary];
 
   NSArray* immutableChildren = [NSArray arrayWithArray:mutableChildren];
   self.children = immutableChildren;
   return immutableChildren;
 }
 
-- (WLPDFObject*)objectForKey:(NSString*)key {
+- (PIPDFObject*)objectForKey:(NSString*)key {
   return self.childrenDictionary[key];
 }
 

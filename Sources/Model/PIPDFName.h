@@ -1,10 +1,10 @@
 // PDFInspector
 // Author: Vladimir Magaziy <vmagaziy@gmail.com>
 
-#import "WLPDFObject.h"
+#import "PIPDFObject.h"
 
 // Represents a named PDF objects
-@interface WLPDFName : WLPDFObject
+@interface PIPDFName : PIPDFObject
 
 @property(nonatomic, readonly) NSString* stringValue;
 

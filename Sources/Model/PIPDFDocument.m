@@ -1,54 +1,54 @@
 // PDFInspector
 // Author: Vladimir Magaziy <vmagaziy@gmail.com>
 
-#import "WLPDFDocument.h"
-#import "WLPDFDictionary.h"
-#import "WLPDFPage.h"
-#import "WLPDFName.h"
-#import "WLPDFObjectInternal.h"
+#import "PIPDFDocument.h"
+#import "PIPDFDictionary.h"
+#import "PIPDFPage.h"
+#import "PIPDFName.h"
+#import "PIPDFObjectInternal.h"
 
 // A name of a dictionary entry that must be present in the case the dictionary
 // represents a PDF page or a catalog for pages (Portable Document Format
 // Reference Manual Version 1.3, Adobe Systems Incorporated, pp. 72, 73).
-static NSString* kWLTypeEntryName = @"Type";
+static NSString* const PITypeEntryName = @"Type";
 
 // A value of the dictionary entry named as kTypeEntryName that must be present
 // in the dictionary that represents a page (Portable Document Format Reference
 // Manual Version 1.3, Adobe Systems Incorporated, p. 72).
-static NSString* kWLPagesEntryValue = @"Pages";
+static NSString* const PIPagesEntryValue = @"Pages";
 
 // A name of the dictionary entry that contains a list of indirect references
 // to the immediate children of a page node (Portable Document Format Reference
 // Manual Version 1.3, Adobe Systems Incorporated, p. 72).
-NSString* kWLKidsEntryName = @"Kids";
+NSString* const PIKidsEntryName = @"Kids";
 
-static void WLExtractPages(NSMutableArray* pages, WLPDFObject* object) {
-  for (WLPDFObject* child in object.children) {
-    if ([child isKindOfClass:[WLPDFPage class]]) {
-			[pages addObject:child];
-    } else if ([child isKindOfClass:[WLPDFDictionary class]]) {
-			WLPDFDictionary* dictionary = (WLPDFDictionary*)child;
-			
-			WLPDFObject* entry = [dictionary objectForKey:kWLTypeEntryName];
-			if (entry && [entry isKindOfClass:[WLPDFName class]]) {
-        WLPDFName* name = (WLPDFName*)entry;
-        if ([name.stringValue isEqualToString:kWLPagesEntryValue]) {
-          WLPDFObject* kids = [dictionary objectForKey:kWLKidsEntryName];
-          WLExtractPages(pages, kids);
+static void PIExtractPages(NSMutableArray* pages, PIPDFObject* object) {
+  for (PIPDFObject* child in object.children) {
+    if ([child isKindOfClass:[PIPDFPage class]]) {
+      [pages addObject:child];
+    } else if ([child isKindOfClass:[PIPDFDictionary class]]) {
+      PIPDFDictionary* dictionary = (PIPDFDictionary*)child;
+
+      PIPDFObject* entry = [dictionary objectForKey:PITypeEntryName];
+      if ([entry isKindOfClass:[PIPDFName class]]) {
+        PIPDFName* name = (PIPDFName*)entry;
+        if ([name.stringValue isEqualToString:PIPagesEntryValue]) {
+          PIPDFObject* kids = [dictionary objectForKey:PIKidsEntryName];
+          PIExtractPages(pages, kids);
         }
       }
     }
   }
 }
 
-@interface WLPDFDocument()
+@interface PIPDFDocument ()
 
-@property(nonatomic, strong, readwrite) NSArray* pages;
-@property(nonatomic, strong, readwrite) WLPDFDictionary* catalog;
+@property(nonatomic, readwrite) NSArray* pages;
+@property(nonatomic, readwrite) PIPDFDictionary* catalog;
 
 @end
 
-@implementation WLPDFDocument
+@implementation PIPDFDocument
 
 + (instancetype)documentWithContentsOfURL:(NSURL*)url {
   NSParameterAssert(url);
@@ -73,14 +73,13 @@ static void WLExtractPages(NSMutableArray* pages, WLPDFObject* object) {
   return self.catalog.children;
 }
 
-- (WLPDFDictionary*)catalog {
+- (PIPDFDictionary*)catalog {
   if (!_catalog) {
     CGPDFDictionaryRef rawCatalog =
         CGPDFDocumentGetCatalog((CGPDFDocumentRef)self.impl);
     if (rawCatalog) {
-      _catalog = [WLPDFDictionary objectWithImpl:rawCatalog
-                                            name:nil
-                                          parent:self];
+      _catalog =
+          [PIPDFDictionary objectWithImpl:rawCatalog name:nil parent:self];
     }
   }
   return _catalog;
@@ -89,7 +88,7 @@ static void WLExtractPages(NSMutableArray* pages, WLPDFObject* object) {
 - (NSArray*)pages {
   if (!_pages) {
     NSMutableArray* pages = [[NSMutableArray alloc] init];
-    WLExtractPages(pages, self);
+    PIExtractPages(pages, self);
     _pages = [NSArray arrayWithArray:pages];
   }
   return _pages;

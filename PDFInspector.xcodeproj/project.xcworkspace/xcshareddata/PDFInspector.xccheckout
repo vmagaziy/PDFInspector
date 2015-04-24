@@ -10,43 +10,31 @@
 	<string>PDFInspector</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>44FF0A8E-FB5E-44C8-9C3F-D662E54D109B</key>
+		<key>852210B91FEB7D453FF6183FCFA989E3C6D355E7</key>
 		<string>https://github.com/vmagaziy/PDFInspector.git</string>
-		<key>CEB50728-0FF3-4B3B-A49C-8581C0018BF4</key>
-		<string>https://github.com/allending/Kiwi.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>PDFInspector/PDFInspector.xcodeproj/project.xcworkspace</string>
+	<string>PDFInspector.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>44FF0A8E-FB5E-44C8-9C3F-D662E54D109B</key>
-		<string>../../..</string>
-		<key>CEB50728-0FF3-4B3B-A49C-8581C0018BF4</key>
-		<string>../../Kiwi</string>
+		<key>852210B91FEB7D453FF6183FCFA989E3C6D355E7</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/vmagaziy/PDFInspector.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>44FF0A8E-FB5E-44C8-9C3F-D662E54D109B</string>
+	<string>852210B91FEB7D453FF6183FCFA989E3C6D355E7</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>CEB50728-0FF3-4B3B-A49C-8581C0018BF4</string>
+			<string>852210B91FEB7D453FF6183FCFA989E3C6D355E7</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Kiwi</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>44FF0A8E-FB5E-44C8-9C3F-D662E54D109B</string>
-			<key>IDESourceControlWCCName</key>
-			<string>PDFInspector</string>
+			<string>PDFInspector2</string>
 		</dict>
 	</array>
 </dict>

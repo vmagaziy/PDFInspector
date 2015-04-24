@@ -1,7 +1,7 @@
 // PDFInspector
 // Author: Vladimir Magaziy <vmagaziy@gmail.com>
 
-#import <Cocoa/Cocoa.h>
+@import Cocoa;
 
-@interface WLDocument : NSDocument
+@interface PIDocument : NSDocument
 @end

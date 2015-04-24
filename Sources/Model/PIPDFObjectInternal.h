@@ -1,9 +1,9 @@
 // PDFInspector
 // Author: Vladimir Magaziy <vmagaziy@gmail.com>
 
-#import "WLPDFObject.h"
+#import "PIPDFObject.h"
 
-@interface WLPDFObject ()
+@interface PIPDFObject ()
 
 @property(nonatomic) CGPDFObjectRef impl;
 

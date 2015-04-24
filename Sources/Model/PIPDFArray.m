@@ -1,10 +1,10 @@
 // PDFInspector
 // Author: Vladimir Magaziy <vmagaziy@gmail.com>
 
-#import "WLPDFArray.h"
-#import "WLPDFObjectInternal.h"
+#import "PIPDFArray.h"
+#import "PIPDFObjectInternal.h"
 
-@implementation WLPDFArray
+@implementation PIPDFArray
 
 - (NSArray*)children {
   NSArray* children = [super children];
@@ -24,17 +24,15 @@
     if (!CGPDFArrayGetObject(rawArrayImpl, index, &rawElementImpl)) {
       // No chance to get a PDF object at index position, so just ignore it
       NSLog(@"ERROR: Failed to retrieve object at index: %lu for array: %@",
-          (unsigned long)index, rawArrayImpl);
+            (unsigned long)index, rawArrayImpl);
       continue;
     }
 
     // String representation of index is used as a name of element
-    NSString* name = [NSString stringWithFormat:@"%lu",
-        (unsigned long)index];
+    NSString* name = [NSString stringWithFormat:@"%lu", (unsigned long)index];
 
-    WLPDFObject* child = [WLPDFObject objectWithImpl:rawElementImpl
-                                                name:name
-                                              parent:self];
+    PIPDFObject* child =
+        [PIPDFObject objectWithImpl:rawElementImpl name:name parent:self];
     [mutableChildren addObject:child];
   }
 
@@ -56,7 +54,7 @@
   NSMutableString* mutableString = [NSMutableString stringWithString:@"["];
   NSUInteger count = self.count;
   for (NSUInteger index = 0; index < count; ++index) {
-    WLPDFObject* element = [self objectAtIndex:index];
+    PIPDFObject* element = [self objectAtIndex:index];
     [mutableString appendString:element.typeName];
     if (index != count - 1) {
       [mutableString appendString:@", "];
@@ -74,7 +72,7 @@
   return [self.children count];
 }
 
-- (WLPDFObject*)objectAtIndex:(NSUInteger)index {
+- (PIPDFObject*)objectAtIndex:(NSUInteger)index {
   return self.children[index];
 }
 

@@ -1,8 +1,8 @@
 // PDFInspector
 // Author: Vladimir Magaziy <vmagaziy@gmail.com>
 
-#import "WLPDFObject.h"
+#import "PIPDFObject.h"
 
 // Represents a PDF stream
-@interface WLPDFStream : WLPDFObject
+@interface PIPDFStream : PIPDFObject
 @end

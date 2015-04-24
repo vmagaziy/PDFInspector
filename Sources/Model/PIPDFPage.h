@@ -1,10 +1,10 @@
 // PDFInspector
 // Author: Vladimir Magaziy <vmagaziy@gmail.com>
 
-#import "WLPDFDictionary.h"
+#import "PIPDFDictionary.h"
 
 // Represents a PDF page
-@interface WLPDFPage : WLPDFDictionary
+@interface PIPDFPage : PIPDFDictionary
 
 @property(nonatomic, readonly) NSUInteger number;
 
@@ -22,7 +22,7 @@
 //   the dimensions of an A4 sheet of paper). In some cases, a media box will
 //   be a larger rectangle, which includes printing instructions, cut marks,
 //   or other content.  By default, it is equal to a crop box.
-// - Art box specifies an area of the page to be used when placing	PDF content
+// - Art box specifies an area of the page to be used when placing PDF content
 //   into another application.  By default, it is equal to a crop box.
 @property(nonatomic, readonly) CGRect mediaBox;
 @property(nonatomic, readonly) CGRect cropBox;

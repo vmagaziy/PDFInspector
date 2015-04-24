@@ -3,7 +3,7 @@
 
 @import Foundation;
 
-@class WLPDFDocument;
+@class PIPDFDocument;
 
 // Implements basic behavior of named tree nodes: stores reference to
 // parent node (root node in the tree does not have a parent) and child
@@ -12,16 +12,16 @@
 // and other PDF objects are represented by nodes in this tree; leaf nodes
 // represent PDF scalar objects (i.e., objects that don't refer other
 // objects, for instance: numbers, strings and names).
-@interface WLPDFNode : NSObject
+@interface PIPDFNode : NSObject
 
 @property(nonatomic, copy) NSString* name;
 
-@property(nonatomic, weak) WLPDFNode* parent;
-@property(nonatomic, strong) NSArray* children;
+@property(nonatomic, weak) PIPDFNode* parent;
+@property(nonatomic) NSArray* children;
 
-@property(nonatomic, readonly) WLPDFDocument* document;
+@property(nonatomic, readonly) PIPDFDocument* document;
 
-@property(nonatomic, strong) NSDictionary* childrenDictionary;
-- (WLPDFNode*)childWithName:(NSString*)name;
+@property(nonatomic) NSDictionary* childrenDictionary;
+- (PIPDFNode*)childWithName:(NSString*)name;
 
 @end

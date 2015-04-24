@@ -1,11 +1,11 @@
 // PDFInspector
 // Author: Vladimir Magaziy <vmagaziy@gmail.com>
 
-#import "WLPDFObject.h"
+#import "PIPDFObject.h"
 
 // Represents a dictionary of of PDF objects
-@interface WLPDFDictionary : WLPDFObject
+@interface PIPDFDictionary : PIPDFObject
 
-- (WLPDFObject*)objectForKey:(NSString*)key;
+- (PIPDFObject*)objectForKey:(NSString*)key;
 
 @end
