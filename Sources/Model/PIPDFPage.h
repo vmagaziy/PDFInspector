@@ -1,7 +1,7 @@
 // PDFInspector
 // Author: Vladimir Magaziy <vmagaziy@gmail.com>
 
-@import CoreGraphics; // CGRect
+@import CoreGraphics;  // CGRect, CGImageRef
 #import "PIPDFDictionary.h"
 
 // Represents a PDF page
@@ -31,5 +31,8 @@
 @property(nonatomic, readonly) CGRect trimBox;
 
 @property(nonatomic, readonly) NSInteger rotationAngle;
+
+@property(nonatomic, readonly) CGImageRef thumbnailImage;  // 100x100 w/ alpha
+@property(nonatomic, readonly) CGImageRef image;
 
 @end

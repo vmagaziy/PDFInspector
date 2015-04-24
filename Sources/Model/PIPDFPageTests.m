@@ -36,4 +36,16 @@
   XCTAssertEqual(self.page.rotationAngle, (NSInteger)0);
 }
 
+- (void)testThatPageHasThumbnailImageAndItIsCached {
+  XCTAssertTrue(self.page.thumbnailImage != NULL);
+  CGImageRef thumbnailImage = self.page.thumbnailImage;
+  XCTAssertEqual(thumbnailImage, self.page.thumbnailImage);
+}
+
+- (void)testThatPageHasImageAndItIsCached {
+  XCTAssertTrue(self.page.image != NULL);
+  CGImageRef image = self.page.image;
+  XCTAssertEqual(image, self.page.image);
+}
+
 @end

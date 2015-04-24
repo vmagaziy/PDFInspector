@@ -25,6 +25,8 @@ NSString* const PICountEntryName = @"Count";
 @interface PIPDFPage ()
 
 @property(nonatomic, assign) CGPDFPageRef pageImpl;
+@property(nonatomic, assign) CGImageRef thumbnailImage;
+@property(nonatomic, assign) CGImageRef image;
 
 @end
 
@@ -48,6 +50,11 @@ NSString* const PICountEntryName = @"Count";
   }
 
   return nil;
+}
+
+- (void)dealloc {
+  CGImageRelease(_thumbnailImage);
+  CGImageRelease(_image);
 }
 
 - (NSUInteger)number {
@@ -86,6 +93,50 @@ NSString* const PICountEntryName = @"Count";
 - (NSInteger)rotationAngle {
   return CGPDFPageGetRotationAngle(self.pageImpl);
 }
+
+- (CGImageRef)thumbnailImage {
+  if (!_thumbnailImage) {
+    CGRect rect = CGRectMake(0.0, 0.0, 100.0, 100.0);
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGContextRef ctx = CGBitmapContextCreate(
+        NULL, CGRectGetWidth(rect), CGRectGetHeight(rect), 8, 0, colorSpace,
+        (CGBitmapInfo)kCGImageAlphaPremultipliedFirst);
+    CGColorSpaceRelease(colorSpace);
+
+    CGContextSetShadow(ctx, CGSizeMake(4.0, -4.0), 7.0);
+
+    CGAffineTransform transform = CGPDFPageGetDrawingTransform(
+        self.pageImpl, kCGPDFMediaBox, rect, 0.0, true);
+    CGContextConcatCTM(ctx, transform);
+
+    CGContextDrawPDFPage(ctx, self.pageImpl);
+    _thumbnailImage = CGBitmapContextCreateImage(ctx);
+    CGContextRelease(ctx);
+  }
+  return _thumbnailImage;
+}
+
+- (CGImageRef)image {
+  if (!_image) {
+    CGRect rect = self.mediaBox;
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGContextRef ctx = CGBitmapContextCreate(
+        NULL, CGRectGetWidth(rect), CGRectGetHeight(rect), 8, 0, colorSpace,
+        (CGBitmapInfo)kCGImageAlphaNoneSkipFirst);
+    CGColorSpaceRelease(colorSpace);
+
+    CGAffineTransform transform = CGPDFPageGetDrawingTransform(
+        self.pageImpl, kCGPDFMediaBox, rect, 0.0, true);
+    CGContextConcatCTM(ctx, transform);
+
+    CGContextDrawPDFPage(ctx, self.pageImpl);
+    _image = CGBitmapContextCreateImage(ctx);
+    CGContextRelease(ctx);
+  }
+  return _image;
+}
+
+#pragma mark -
 
 - (CGPDFPageRef)pageImpl {
   if (!_pageImpl) {
