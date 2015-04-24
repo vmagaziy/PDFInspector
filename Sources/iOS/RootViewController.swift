@@ -11,6 +11,7 @@ class RootViewController: UITableViewController {
     self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellID())
     let url = NSBundle.mainBundle().URLForResource("test", withExtension: "pdf")
     self.document = PIPDFDocument(contentsOfURL: url)
+    self.title = self.document.name
   }
 }
 
@@ -22,12 +23,19 @@ extension RootViewController : UITableViewDataSource, UITableViewDelegate {
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let index = indexPath.row
+    let page = self.document.pages[index] as! PIPDFPage
+    
     let cell = tableView.dequeueReusableCellWithIdentifier(cellID(), forIndexPath: indexPath) as! UITableViewCell
-    cell.textLabel?.text = "xxx"
+    
+    cell.textLabel?.text = String(format: NSLocalizedString("Page: %ld", comment: ""), page.number)
+    cell.imageView?.image = UIImage(CGImage: page.thumbnailImage)
+    
     return cell
   }
   
   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    tableView.deselectRowAtIndexPath(indexPath, animated: true)
   }
   
   func cellID() -> String {
