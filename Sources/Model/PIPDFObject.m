@@ -37,7 +37,7 @@
     }
   }
 
-  NSLog(@"Failed to create wrapper for: %@ of type: %@", impl, implType);
+  NSLog(@"Failed to create a wrapper for type: %ld", (unsigned long)implType);
   return nil;
 }
 
