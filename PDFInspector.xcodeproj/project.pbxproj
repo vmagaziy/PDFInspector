@@ -57,6 +57,7 @@
 		9476A3CB1AEA965B003400CE /* PIPDFScalarTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 6785ED8C18EEBAD200176C09 /* PIPDFScalarTypes.m */; };
 		9476A3CC1AEA965B003400CE /* PIPDFNodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CDF9B118F6A0D70024E85B /* PIPDFNodeTests.m */; };
 		9476A3CD1AEA9679003400CE /* test.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 67A21B1D18F82C9A001CB350 /* test.pdf */; };
+		9476A3D31AEE6BAC003400CE /* PDFObjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476A3D21AEE6BAC003400CE /* PDFObjectViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		9476A3C71AEA94CA003400CE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9476A3D01AEA9739003400CE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PIDocument.xib; sourceTree = "<group>"; };
 		9476A3D11AEA973F003400CE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		9476A3D21AEE6BAC003400CE /* PDFObjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFObjectViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +253,7 @@
 			children = (
 				9476A3961AEA843C003400CE /* AppDelegate.swift */,
 				9476A3981AEA843C003400CE /* RootViewController.swift */,
+				9476A3D21AEE6BAC003400CE /* PDFObjectViewController.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 			files = (
 				9476A3B91AEA91AE003400CE /* PIPDFStream.m in Sources */,
 				9476A3BB1AEA91AE003400CE /* PIPDFArray.m in Sources */,
+				9476A3D31AEE6BAC003400CE /* PDFObjectViewController.swift in Sources */,
 				9476A3BC1AEA91AE003400CE /* PIPDFName.m in Sources */,
 				9476A3BD1AEA91AE003400CE /* PIPDFScalarTypes.m in Sources */,
 				9476A3BE1AEA91AE003400CE /* PIPDFObject.m in Sources */,
@@ -839,6 +843,7 @@
 				9476A3B01AEA843D003400CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9476A3B11AEA843D003400CE /* Build configuration list for PBXNativeTarget "PDFInspector_iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -847,6 +852,7 @@
 				9476A3B31AEA843D003400CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
