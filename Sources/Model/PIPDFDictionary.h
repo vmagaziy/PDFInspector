@@ -3,7 +3,7 @@
 
 #import "PIPDFObject.h"
 
-// Represents a dictionary of of PDF objects
+// Represents a dictionary of PDF objects
 @interface PIPDFDictionary : PIPDFObject
 
 - (PIPDFObject*)objectForKey:(NSString*)key;
