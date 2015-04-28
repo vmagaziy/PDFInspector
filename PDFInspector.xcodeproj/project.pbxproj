@@ -58,6 +58,10 @@
 		9476A3CC1AEA965B003400CE /* PIPDFNodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CDF9B118F6A0D70024E85B /* PIPDFNodeTests.m */; };
 		9476A3CD1AEA9679003400CE /* test.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 67A21B1D18F82C9A001CB350 /* test.pdf */; };
 		9476A3D31AEE6BAC003400CE /* PDFObjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476A3D21AEE6BAC003400CE /* PDFObjectViewController.swift */; };
+		9476A3DB1AEF892C003400CE /* PIPDFString.m in Sources */ = {isa = PBXBuildFile; fileRef = 9476A3DA1AEF892C003400CE /* PIPDFString.m */; };
+		9476A3DC1AEF892C003400CE /* PIPDFString.m in Sources */ = {isa = PBXBuildFile; fileRef = 9476A3DA1AEF892C003400CE /* PIPDFString.m */; };
+		9476A3DD1AEF892C003400CE /* PIPDFString.m in Sources */ = {isa = PBXBuildFile; fileRef = 9476A3DA1AEF892C003400CE /* PIPDFString.m */; };
+		9476A3DE1AEF892C003400CE /* PIPDFString.m in Sources */ = {isa = PBXBuildFile; fileRef = 9476A3DA1AEF892C003400CE /* PIPDFString.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +123,8 @@
 		9476A3D01AEA9739003400CE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PIDocument.xib; sourceTree = "<group>"; };
 		9476A3D11AEA973F003400CE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		9476A3D21AEE6BAC003400CE /* PDFObjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFObjectViewController.swift; sourceTree = "<group>"; };
+		9476A3D91AEF892C003400CE /* PIPDFString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIPDFString.h; sourceTree = "<group>"; };
+		9476A3DA1AEF892C003400CE /* PIPDFString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIPDFString.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +224,8 @@
 				6725F559190008EB004D7D20 /* PIPDFPageTests.m */,
 				67A21B2218F83C9C001CB350 /* PIPDFStream.h */,
 				67A21B2318F83C9C001CB350 /* PIPDFStream.m */,
+				9476A3D91AEF892C003400CE /* PIPDFString.h */,
+				9476A3DA1AEF892C003400CE /* PIPDFString.m */,
 				67CDF95418F589020024E85B /* PIPDFDictionary.h */,
 				67CDF95518F589020024E85B /* PIPDFDictionary.m */,
 				67CDF95118F583A80024E85B /* PIPDFArray.h */,
@@ -448,6 +456,7 @@
 				67A21B1518F7FCEA001CB350 /* PIPDFDocument.m in Sources */,
 				67A21B2418F83C9C001CB350 /* PIPDFStream.m in Sources */,
 				67A21B2118F8308B001CB350 /* PIPDFPage.m in Sources */,
+				9476A3DB1AEF892C003400CE /* PIPDFString.m in Sources */,
 				6785ED9218EEBD1200176C09 /* PIPDFObject.m in Sources */,
 				6785ED9018EEBD0C00176C09 /* PIPDFName.m in Sources */,
 				6785ED9318EEBD1500176C09 /* PIPDFScalarTypes.m in Sources */,
@@ -467,6 +476,7 @@
 				94203FAE1AEA63D90083D46B /* PIPDFStream.m in Sources */,
 				94203FB51AEA64D20083D46B /* PIPDFPageTests.m in Sources */,
 				94203FB01AEA63D90083D46B /* PIPDFArray.m in Sources */,
+				9476A3DC1AEF892C003400CE /* PIPDFString.m in Sources */,
 				94203FB11AEA63D90083D46B /* PIPDFName.m in Sources */,
 				94203FB21AEA63D90083D46B /* PIPDFScalarTypes.m in Sources */,
 				94203FB31AEA63D90083D46B /* PIPDFObject.m in Sources */,
@@ -486,6 +496,7 @@
 				9476A3B91AEA91AE003400CE /* PIPDFStream.m in Sources */,
 				9476A3BB1AEA91AE003400CE /* PIPDFArray.m in Sources */,
 				9476A3D31AEE6BAC003400CE /* PDFObjectViewController.swift in Sources */,
+				9476A3DD1AEF892C003400CE /* PIPDFString.m in Sources */,
 				9476A3BC1AEA91AE003400CE /* PIPDFName.m in Sources */,
 				9476A3BD1AEA91AE003400CE /* PIPDFScalarTypes.m in Sources */,
 				9476A3BE1AEA91AE003400CE /* PIPDFObject.m in Sources */,
@@ -504,6 +515,7 @@
 			files = (
 				9476A3CB1AEA965B003400CE /* PIPDFScalarTypes.m in Sources */,
 				9476A3CA1AEA965B003400CE /* PIPDFPageTests.m in Sources */,
+				9476A3DE1AEF892C003400CE /* PIPDFString.m in Sources */,
 				9476A3C91AEA965B003400CE /* PIPDFDocumentTests.m in Sources */,
 				9476A3CC1AEA965B003400CE /* PIPDFNodeTests.m in Sources */,
 			);
