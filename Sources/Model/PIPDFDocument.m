@@ -81,8 +81,9 @@ static void PIExtractPages(NSMutableArray* pages, PIPDFObject* object) {
     CGPDFDictionaryRef rawCatalog =
         CGPDFDocumentGetCatalog((CGPDFDocumentRef)self.impl);
     if (rawCatalog) {
-      _catalog =
-          [PIPDFDictionary objectWithImpl:rawCatalog name:nil parent:self];
+      _catalog = [[PIPDFDictionary alloc] initWithImpl:rawCatalog
+                                                  name:nil
+                                                parent:self];
     }
   }
   return _catalog;
