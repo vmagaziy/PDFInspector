@@ -3,6 +3,31 @@
 
 import UIKit
 
+class PDFObjectTableViewCell : UITableViewCell {
+  override func layoutSubviews() {
+     super.layoutSubviews()
+    if let accessoryView = self.accessoryView {
+      accessoryView.sizeToFit()
+      
+      let requiredWidth: CGFloat = ceil(CGRectGetWidth(accessoryView.bounds))
+      let detailsTextLabelOffset = CGRectGetMaxX(detailTextLabel!.frame)
+      let textLabelOffset = CGRectGetMaxX(textLabel!.frame)
+      let margin: CGFloat = 10
+      let width = CGRectGetWidth(self.bounds)
+      
+      if width - detailsTextLabelOffset - 2 * margin < requiredWidth {
+        var frame = textLabel!.frame
+        frame.origin.x = textLabelOffset + margin
+        frame.size.width = width - textLabelOffset - 2 * margin
+        accessoryView.frame = frame
+      } else {
+        let offset = max(detailsTextLabelOffset, textLabelOffset) 
+        accessoryView.frame = CGRectMake(offset + margin, 0.0, width - offset - 2 * margin, CGRectGetHeight(bounds))
+      }
+    }
+  }
+}
+
 class PDFObjectViewController: UITableViewController {
   var PDFObject: PIPDFObject!
   
@@ -26,7 +51,8 @@ extension PDFObjectViewController : UITableViewDataSource, UITableViewDelegate {
     
     var cell = tableView.dequeueReusableCellWithIdentifier(cellID) as? UITableViewCell
     if cell == nil {
-      cell = UITableViewCell(style: .Subtitle, reuseIdentifier: cellID)
+      cell = PDFObjectTableViewCell(style: .Subtitle, reuseIdentifier: cellID)
+      cell!.textLabel!.adjustsFontSizeToFitWidth = true
     }
     
     cell!.textLabel!.text = object.name
@@ -36,11 +62,13 @@ extension PDFObjectViewController : UITableViewDataSource, UITableViewDelegate {
       cell!.accessoryType = .DisclosureIndicator
     } else {
       cell!.selectionStyle = .None
+      
       var infoLabel = UILabel()
-      infoLabel.textColor = UIColor.darkGrayColor()
+      infoLabel.textColor = UIColor.grayColor()
       infoLabel.adjustsFontSizeToFitWidth = true
       infoLabel.text = object.stringRepresentation
-      infoLabel.sizeToFit()
+      infoLabel.textAlignment = .Right
+    
       cell!.accessoryView = infoLabel
     }
     
