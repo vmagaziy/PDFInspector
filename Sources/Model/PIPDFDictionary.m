@@ -65,6 +65,8 @@ static void PIPDFDictionaryApplierFunction(const char* key,
   }
 
   CGPDFDictionaryRef rawDictionaryImpl = NULL;
+  // Some objects like a catalog of PDF document are
+  // dictionaries while their type does not reflect that
   if (kCGPDFObjectTypeDictionary != CGPDFObjectGetType(self.impl)) {
     rawDictionaryImpl = (CGPDFDictionaryRef)self.impl;
   } else if (!CGPDFObjectGetValue(self.impl, kCGPDFObjectTypeDictionary,
