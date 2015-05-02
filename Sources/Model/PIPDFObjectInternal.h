@@ -1,11 +1,19 @@
 // PDFInspector
 // Author: Vladimir Magaziy <vmagaziy@gmail.com>
 
-@import CoreGraphics;
+@import CoreGraphics;  // CGPDFObjectRef
 #import "PIPDFObject.h"
 
 @interface PIPDFObject ()
 
-@property(nonatomic) CGPDFObjectRef impl;
++ (instancetype)objectWithImpl:(void*)impl  // CGPDFObjectRef
+                          name:(NSString*)name
+                        parent:(PIPDFNode*)parent;  // Factory method
+
+- (instancetype)initWithImpl:(void*)impl  // CGPDFObjectRef
+                        name:(NSString*)name
+                      parent:(PIPDFNode*)parent;  // Designated
+
+@property(nonatomic, assign) CGPDFObjectRef impl;
 
 @end

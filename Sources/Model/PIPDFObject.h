@@ -9,14 +9,6 @@
 // by means of PDF nodes.
 @interface PIPDFObject : PIPDFNode
 
-+ (instancetype)objectWithImpl:(void*)impl
-                          name:(NSString*)name
-                        parent:(PIPDFNode*)parent;  // Factory method
-
-- (instancetype)initWithImpl:(void*)impl
-                        name:(NSString*)name
-                      parent:(PIPDFNode*)parent;  // Designated
-
 @property(nonatomic, readonly) NSString* typeName;
 
 @property(nonatomic, copy) NSString* stringRepresentation;

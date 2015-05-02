@@ -47,7 +47,7 @@
   NSParameterAssert(impl);
   self = [super init];
   if (self) {
-    _impl = impl;
+    _impl = (CGPDFObjectRef)impl;
     self.name = [name copy];
     self.parent = parent;
   }
