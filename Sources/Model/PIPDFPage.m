@@ -8,19 +8,19 @@
 // A name of a dictionary entry that must be present in the case the dictionary
 // represents a PDF page or a catalog for pages (Portable Document Format
 // Reference Manual Version 1.3, Adobe Systems Incorporated, pp. 72, 73).
-static NSString* const PIPageTypeEntryName = @"Type";
+static NSString* const PIPDFPageTypeEntryName = @"Type";
 
 // A value of the dictionary entry named as kPageTypeEntryName that must be
 // present in the case the dictionary represents a page (Portable Document
 // Format Reference Manual Version 1.3, Adobe Systems Incorporated, p. 73).
-static NSString* const PIPageEntryValue = @"Page";
+static NSString* const PIPDFPageEntryValue = @"Page";
 
 // A name of the dictionary entry that specifies the number of leaf nodes
 // (imageable pages) under the node. The leaf nodes do not have to be
 // immediately below the node in the tree, but can be several levels deeper
 // in the PDF page tree (Portable Document Format Reference Manual
 // Version 1.3, Adobe Systems Incorporated, p. 72).
-NSString* const PICountEntryName = @"Count";
+NSString* const PIPDFCountEntryName = @"Count";
 
 @interface PIPDFPage ()
 
@@ -39,11 +39,11 @@ NSString* const PICountEntryName = @"Count";
   if (CGPDFObjectGetValue((CGPDFObjectRef)impl, kCGPDFObjectTypeDictionary,
                           &rawDictionary)) {
     const char* rawString = NULL;
-    if (CGPDFDictionaryGetName(rawDictionary, [PIPageTypeEntryName UTF8String],
-                               &rawString)) {
+    if (CGPDFDictionaryGetName(
+            rawDictionary, [PIPDFPageTypeEntryName UTF8String], &rawString)) {
       NSString* string =
           [NSString stringWithCString:rawString encoding:NSASCIIStringEncoding];
-      if ([string isEqualToString:PIPageEntryValue]) {
+      if ([string isEqualToString:PIPDFPageEntryValue]) {
         return [[self alloc] initWithImpl:impl name:name parent:parent];
       }
     }
@@ -134,6 +134,14 @@ NSString* const PICountEntryName = @"Count";
     CGContextRelease(ctx);
   }
   return _image;
+}
+
+- (void)dropCache {
+  [super dropCache];
+  CGImageRelease(_thumbnailImage);
+  _thumbnailImage = NULL;
+  CGImageRelease(_image);
+  _image = NULL;
 }
 
 #pragma mark -

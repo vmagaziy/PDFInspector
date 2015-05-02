@@ -25,3 +25,9 @@
 - (PIPDFNode*)childWithName:(NSString*)name;
 
 @end
+
+@interface PIPDFNode (Cache)
+
+- (void)dropCache;  // Override to drop cached values
+
+@end

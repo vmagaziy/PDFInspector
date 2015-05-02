@@ -53,6 +53,11 @@
   return NSLocalizedString(@"Stream", @"Name of type for stream PDF objects");
 }
 
+- (void)dropCache {
+  [super dropCache];
+  _data = nil;  // Use ivar to avoid false creation
+}
+
 #pragma mark -
 
 - (void)cacheData {

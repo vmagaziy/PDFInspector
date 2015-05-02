@@ -8,3 +8,8 @@
 #import "PIPDFStream.h"
 #import "PIPDFPage.h"
 #import "PIPDFDocument.h"
+
+// Must be sent by the client to clear all cached data;
+// this is usually the case on iOS when applications
+// receives the memory warning
+extern NSString* const PIPDFDropCacheNotificationName;
