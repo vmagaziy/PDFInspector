@@ -10,17 +10,17 @@
 // A name of a dictionary entry that must be present in the case the dictionary
 // represents a PDF page or a catalog for pages (Portable Document Format
 // Reference Manual Version 1.3, Adobe Systems Incorporated, pp. 72, 73).
-static NSString* const PITypeEntryName = @"Type";
+static NSString* const PIPDFTypeEntryName = @"Type";
 
 // A value of the dictionary entry named as kTypeEntryName that must be present
 // in the dictionary that represents a page (Portable Document Format Reference
 // Manual Version 1.3, Adobe Systems Incorporated, p. 72).
-static NSString* const PIPagesEntryValue = @"Pages";
+static NSString* const PIPDFPagesEntryValue = @"Pages";
 
 // A name of the dictionary entry that contains a list of indirect references
 // to the immediate children of a page node (Portable Document Format Reference
 // Manual Version 1.3, Adobe Systems Incorporated, p. 72).
-NSString* const PIKidsEntryName = @"Kids";
+NSString* const PIPDFKidsEntryName = @"Kids";
 
 static void PIExtractPages(NSMutableArray* pages, PIPDFObject* object) {
   for (PIPDFObject* child in object.children) {
@@ -29,11 +29,11 @@ static void PIExtractPages(NSMutableArray* pages, PIPDFObject* object) {
     } else if ([child isKindOfClass:[PIPDFDictionary class]]) {
       PIPDFDictionary* dictionary = (PIPDFDictionary*)child;
 
-      PIPDFObject* entry = [dictionary objectForKey:PITypeEntryName];
+      PIPDFObject* entry = [dictionary objectForKey:PIPDFTypeEntryName];
       if ([entry isKindOfClass:[PIPDFName class]]) {
         PIPDFName* name = (PIPDFName*)entry;
-        if ([name.stringValue isEqualToString:PIPagesEntryValue]) {
-          PIPDFObject* kids = [dictionary objectForKey:PIKidsEntryName];
+        if ([name.stringValue isEqualToString:PIPDFPagesEntryValue]) {
+          PIPDFObject* kids = [dictionary objectForKey:PIPDFKidsEntryName];
           PIExtractPages(pages, kids);
         }
       }
