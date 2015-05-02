@@ -8,7 +8,9 @@
 @interface PIPDFStream ()
 
 @property(nonatomic, assign) CGPDFStreamRef streamImpl;
-@property(nonatomic) PIPDFDictionary* dictionary;
+@property(nonatomic, readwrite) PIPDFDictionary* dictionary;
+@property(nonatomic, readwrite) NSData* data;
+@property(nonatomic, readwrite) PIPDFStreamDataType dataType;
 
 @end
 
@@ -27,12 +29,49 @@
   return _dictionary;
 }
 
+- (NSData*)data {
+  if (!_data) {
+    [self cacheData];
+  }
+  return _data;
+}
+
+- (PIPDFStreamDataType)dataType {
+  if (_dataType == PIPDFStreamDataTypeUndefined) {
+    [self cacheData];
+  }
+  return _dataType;
+}
+
+#pragma mark -
+
 - (NSArray*)children {
   return self.dictionary.children;
 }
 
 - (NSString*)typeName {
   return NSLocalizedString(@"Stream", @"Name of type for stream PDF objects");
+}
+
+#pragma mark -
+
+- (void)cacheData {
+  CGPDFDataFormat format;
+  CFDataRef rawData = CGPDFStreamCopyData(self.streamImpl, &format);
+  if (rawData) {
+    _data = (__bridge_transfer NSData*)rawData;
+    switch (format) {
+      case CGPDFDataFormatRaw:
+        _dataType = PIPDFStreamDataTypeRaw;
+        break;
+      case CGPDFDataFormatJPEGEncoded:
+        _dataType = PIPDFStreamDataTypeJPEG;
+        break;
+      case CGPDFDataFormatJPEG2000:
+        _dataType = PIPDFStreamDataTypeJPEG2000;
+        break;
+    }
+  }
 }
 
 - (CGPDFStreamRef)streamImpl {
