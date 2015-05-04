@@ -74,15 +74,11 @@
   }
 
   PIPDFObject* PDFObject = (PIPDFObject*)object;
-  if (PDFObject.impl == self.impl) {
-    return YES;
-  }
-
-  return CFEqual(PDFObject.impl, self.impl);
+  return PDFObject.impl == self.impl;
 }
 
 - (NSUInteger)hash {
-  return CFHash(self.impl);
+  return (NSUInteger)self.impl;
 }
 
 @end
