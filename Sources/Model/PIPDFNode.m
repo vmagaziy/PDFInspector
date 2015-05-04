@@ -46,6 +46,10 @@ NSString* const PIPDFDropCacheNotificationName =
   return self.childrenDictionary[name];
 }
 
+- (id)valueForKey:(NSString*)key {
+  return [self childWithName:key];
+}
+
 - (void)dropCache {
   _childrenDictionary = nil;  // Use ivar to avoid false creation
 }
