@@ -57,6 +57,7 @@ extension PDFObjectViewController : UITableViewDataSource, UITableViewDelegate {
     
     cell!.textLabel!.text = object.name
     cell!.detailTextLabel!.text = object.typeName
+    cell!.imageView!.image = object.thumbnail()
     if object.hasDetails() {
       cell!.selectionStyle = .Blue
       cell!.accessoryType = .DisclosureIndicator
@@ -91,5 +92,21 @@ extension PIPDFNode {
   func hasDetails() -> Bool {
     let childrenCount = children?.count
     return childrenCount != nil && childrenCount != 0 ? true : false
+  }
+  
+  func thumbnail() -> UIImage? {
+    return nil
+  }
+}
+
+extension PIPDFPage {
+  override func thumbnail() -> UIImage? {
+    return UIImage(CGImage: thumbnailImage)
+  }
+}
+
+extension PIPDFImage {
+  override func thumbnail() -> UIImage? {
+    return UIImage(CGImage: thumbnailImage)
   }
 }

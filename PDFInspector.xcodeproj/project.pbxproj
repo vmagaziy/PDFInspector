@@ -62,6 +62,12 @@
 		9476A3DC1AEF892C003400CE /* PIPDFString.m in Sources */ = {isa = PBXBuildFile; fileRef = 9476A3DA1AEF892C003400CE /* PIPDFString.m */; };
 		9476A3DD1AEF892C003400CE /* PIPDFString.m in Sources */ = {isa = PBXBuildFile; fileRef = 9476A3DA1AEF892C003400CE /* PIPDFString.m */; };
 		9476A3DE1AEF892C003400CE /* PIPDFString.m in Sources */ = {isa = PBXBuildFile; fileRef = 9476A3DA1AEF892C003400CE /* PIPDFString.m */; };
+		9476A3E11AF0CE98003400CE /* PIPDFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9476A3E01AF0CE98003400CE /* PIPDFImage.m */; };
+		9476A3E21AF0CE99003400CE /* PIPDFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9476A3E01AF0CE98003400CE /* PIPDFImage.m */; };
+		9476A3E31AF0CE99003400CE /* PIPDFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9476A3E01AF0CE98003400CE /* PIPDFImage.m */; };
+		9476A3E41AF0CE99003400CE /* PIPDFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9476A3E01AF0CE98003400CE /* PIPDFImage.m */; };
+		94B9DF8B1AF767EE006C5114 /* PIPDFImageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B9DF8A1AF767EE006C5114 /* PIPDFImageTests.m */; };
+		94B9DF8C1AF767EE006C5114 /* PIPDFImageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B9DF8A1AF767EE006C5114 /* PIPDFImageTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +131,9 @@
 		9476A3D21AEE6BAC003400CE /* PDFObjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFObjectViewController.swift; sourceTree = "<group>"; };
 		9476A3D91AEF892C003400CE /* PIPDFString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIPDFString.h; sourceTree = "<group>"; };
 		9476A3DA1AEF892C003400CE /* PIPDFString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIPDFString.m; sourceTree = "<group>"; };
+		9476A3DF1AF0CE98003400CE /* PIPDFImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIPDFImage.h; sourceTree = "<group>"; };
+		9476A3E01AF0CE98003400CE /* PIPDFImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIPDFImage.m; sourceTree = "<group>"; };
+		94B9DF8A1AF767EE006C5114 /* PIPDFImageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIPDFImageTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +231,9 @@
 				67A21B1F18F8308B001CB350 /* PIPDFPage.h */,
 				67A21B2018F8308B001CB350 /* PIPDFPage.m */,
 				6725F559190008EB004D7D20 /* PIPDFPageTests.m */,
+				9476A3DF1AF0CE98003400CE /* PIPDFImage.h */,
+				9476A3E01AF0CE98003400CE /* PIPDFImage.m */,
+				94B9DF8A1AF767EE006C5114 /* PIPDFImageTests.m */,
 				67A21B2218F83C9C001CB350 /* PIPDFStream.h */,
 				67A21B2318F83C9C001CB350 /* PIPDFStream.m */,
 				9476A3D91AEF892C003400CE /* PIPDFString.h */,
@@ -232,11 +244,11 @@
 				67CDF95218F583A80024E85B /* PIPDFArray.m */,
 				6785ED8418EEBAD200176C09 /* PIPDFName.h */,
 				6785ED8518EEBAD200176C09 /* PIPDFName.m */,
-				6785ED8A18EEBAD200176C09 /* PIPDFObjectInternal.h */,
 				6785ED8B18EEBAD200176C09 /* PIPDFScalarTypes.h */,
 				6785ED8C18EEBAD200176C09 /* PIPDFScalarTypes.m */,
 				6785ED8818EEBAD200176C09 /* PIPDFObject.h */,
 				6785ED8918EEBAD200176C09 /* PIPDFObject.m */,
+				6785ED8A18EEBAD200176C09 /* PIPDFObjectInternal.h */,
 				6785ED8618EEBAD200176C09 /* PIPDFNode.h */,
 				6785ED8718EEBAD200176C09 /* PIPDFNode.m */,
 				67CDF9B118F6A0D70024E85B /* PIPDFNodeTests.m */,
@@ -462,6 +474,7 @@
 				6785ED9318EEBD1500176C09 /* PIPDFScalarTypes.m in Sources */,
 				67CDF95318F583A80024E85B /* PIPDFArray.m in Sources */,
 				6785ED8F18EEBD0500176C09 /* PIPrefix.h in Sources */,
+				9476A3E11AF0CE98003400CE /* PIPDFImage.m in Sources */,
 				6785ED5718EEA29C00176C09 /* PIMain.m in Sources */,
 				67CDF95618F589020024E85B /* PIPDFDictionary.m in Sources */,
 				6785ED5E18EEA29C00176C09 /* PIDocument.m in Sources */,
@@ -478,10 +491,12 @@
 				94203FB01AEA63D90083D46B /* PIPDFArray.m in Sources */,
 				9476A3DC1AEF892C003400CE /* PIPDFString.m in Sources */,
 				94203FB11AEA63D90083D46B /* PIPDFName.m in Sources */,
+				94B9DF8B1AF767EE006C5114 /* PIPDFImageTests.m in Sources */,
 				94203FB21AEA63D90083D46B /* PIPDFScalarTypes.m in Sources */,
 				94203FB31AEA63D90083D46B /* PIPDFObject.m in Sources */,
 				94203FAF1AEA63D90083D46B /* PIPDFDictionary.m in Sources */,
 				94203FB61AEA67AE0083D46B /* PIPDFNodeTests.m in Sources */,
+				9476A3E21AF0CE99003400CE /* PIPDFImage.m in Sources */,
 				94203FB41AEA63D90083D46B /* PIPDFNode.m in Sources */,
 				94203FAB1AEA606E0083D46B /* PIPDFDocumentTests.m in Sources */,
 				94203FAC1AEA63D90083D46B /* PIPDFDocument.m in Sources */,
@@ -502,6 +517,7 @@
 				9476A3BE1AEA91AE003400CE /* PIPDFObject.m in Sources */,
 				9476A3BA1AEA91AE003400CE /* PIPDFDictionary.m in Sources */,
 				9476A3BF1AEA91AE003400CE /* PIPDFNode.m in Sources */,
+				9476A3E31AF0CE99003400CE /* PIPDFImage.m in Sources */,
 				9476A3991AEA843C003400CE /* RootViewController.swift in Sources */,
 				9476A3B71AEA91AE003400CE /* PIPDFDocument.m in Sources */,
 				9476A3B81AEA91AE003400CE /* PIPDFPage.m in Sources */,
@@ -513,11 +529,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94B9DF8C1AF767EE006C5114 /* PIPDFImageTests.m in Sources */,
 				9476A3CB1AEA965B003400CE /* PIPDFScalarTypes.m in Sources */,
 				9476A3CA1AEA965B003400CE /* PIPDFPageTests.m in Sources */,
 				9476A3DE1AEF892C003400CE /* PIPDFString.m in Sources */,
 				9476A3C91AEA965B003400CE /* PIPDFDocumentTests.m in Sources */,
 				9476A3CC1AEA965B003400CE /* PIPDFNodeTests.m in Sources */,
+				9476A3E41AF0CE99003400CE /* PIPDFImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

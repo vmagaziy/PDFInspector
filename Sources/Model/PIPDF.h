@@ -6,6 +6,7 @@
 #import "PIPDFArray.h"
 #import "PIPDFDictionary.h"
 #import "PIPDFStream.h"
+#import "PIPDFImage.h"
 #import "PIPDFPage.h"
 #import "PIPDFDocument.h"
 
