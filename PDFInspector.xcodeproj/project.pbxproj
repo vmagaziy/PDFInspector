@@ -68,6 +68,8 @@
 		9476A3E41AF0CE99003400CE /* PIPDFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9476A3E01AF0CE98003400CE /* PIPDFImage.m */; };
 		94B9DF8B1AF767EE006C5114 /* PIPDFImageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B9DF8A1AF767EE006C5114 /* PIPDFImageTests.m */; };
 		94B9DF8C1AF767EE006C5114 /* PIPDFImageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B9DF8A1AF767EE006C5114 /* PIPDFImageTests.m */; };
+		94B9DF911AF7C1F1006C5114 /* PIApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B9DF901AF7C1F1006C5114 /* PIApplicationDelegate.m */; };
+		94B9DF921AF7C1F1006C5114 /* PIApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B9DF901AF7C1F1006C5114 /* PIApplicationDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +136,8 @@
 		9476A3DF1AF0CE98003400CE /* PIPDFImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIPDFImage.h; sourceTree = "<group>"; };
 		9476A3E01AF0CE98003400CE /* PIPDFImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIPDFImage.m; sourceTree = "<group>"; };
 		94B9DF8A1AF767EE006C5114 /* PIPDFImageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIPDFImageTests.m; sourceTree = "<group>"; };
+		94B9DF8F1AF7C1F1006C5114 /* PIApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIApplicationDelegate.h; sourceTree = "<group>"; };
+		94B9DF901AF7C1F1006C5114 /* PIApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIApplicationDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +264,8 @@
 		94203FBC1AEA68C40083D46B /* OSX */ = {
 			isa = PBXGroup;
 			children = (
+				94B9DF8F1AF7C1F1006C5114 /* PIApplicationDelegate.h */,
+				94B9DF901AF7C1F1006C5114 /* PIApplicationDelegate.m */,
 				6785ED5C18EEA29C00176C09 /* PIDocument.h */,
 				6785ED5D18EEA29C00176C09 /* PIDocument.m */,
 				6785ED5618EEA29C00176C09 /* PIMain.m */,
@@ -470,6 +476,7 @@
 				67A21B2118F8308B001CB350 /* PIPDFPage.m in Sources */,
 				9476A3DB1AEF892C003400CE /* PIPDFString.m in Sources */,
 				6785ED9218EEBD1200176C09 /* PIPDFObject.m in Sources */,
+				94B9DF911AF7C1F1006C5114 /* PIApplicationDelegate.m in Sources */,
 				6785ED9018EEBD0C00176C09 /* PIPDFName.m in Sources */,
 				6785ED9318EEBD1500176C09 /* PIPDFScalarTypes.m in Sources */,
 				67CDF95318F583A80024E85B /* PIPDFArray.m in Sources */,
@@ -496,6 +503,7 @@
 				94203FB31AEA63D90083D46B /* PIPDFObject.m in Sources */,
 				94203FAF1AEA63D90083D46B /* PIPDFDictionary.m in Sources */,
 				94203FB61AEA67AE0083D46B /* PIPDFNodeTests.m in Sources */,
+				94B9DF921AF7C1F1006C5114 /* PIApplicationDelegate.m in Sources */,
 				9476A3E21AF0CE99003400CE /* PIPDFImage.m in Sources */,
 				94203FB41AEA63D90083D46B /* PIPDFNode.m in Sources */,
 				94203FAB1AEA606E0083D46B /* PIPDFDocumentTests.m in Sources */,
