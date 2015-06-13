@@ -2,68 +2,70 @@
 // Author: Vladimir Magaziy <vmagaziy@gmail.com>
 
 #import "PIDocument.h"
+#import "PIPDF.h"
+
+@interface PIDocument () <NSOutlineViewDataSource, NSOutlineViewDelegate>
+
+@property(nonatomic) PIPDFDocument* document;
+@property(nonatomic) IBOutlet NSOutlineView* outlineView;
+
+@end
 
 @implementation PIDocument
 
-- (id)init {
-  self = [super init];
-  if (self) {
-    // Add your subclass-specific initialization here.
-  }
-  return self;
-}
-
-- (NSString *)windowNibName {
-  // Override returning the nib file name of the document
-  // If you need to use a subclass of NSWindowController or if your document
-  // supports multiple NSWindowControllers, you should remove this method and
-  // override -makeWindowControllers instead.
+- (NSString*)windowNibName {
   return @"PIDocument";
 }
 
-- (void)windowControllerDidLoadNib:(NSWindowController *)aController {
-  [super windowControllerDidLoadNib:aController];
-  // Add any code here that needs to be executed once the windowController has
-  // loaded the document's window.
+- (BOOL)readFromURL:(NSURL*)url
+             ofType:(NSString*)typeName
+              error:(NSError**)outError {
+  if ([typeName isEqualToString:@"PDFDocument"]) {
+    self.document = [PIPDFDocument documentWithContentsOfURL:url];
+    [self.outlineView reloadData];
+  }
+  return self.document != nil;
 }
 
-+ (BOOL)autosavesInPlace {
-  return YES;
+#pragma mark -
+
+- (NSInteger)outlineView:(NSOutlineView*)outlineView
+    numberOfChildrenOfItem:(id)item {
+  PIPDFNode* node = item;
+  if (!node) {
+    node = self.document;
+  }
+  return node.children.count;
 }
 
-- (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError {
-  // Insert code here to write your document to data of the specified type. If
-  // outError != NULL, ensure that you create and set an appropriate error when
-  // returning nil.
-  // You can also choose to override -fileWrapperOfType:error:,
-  // -writeToURL:ofType:error:, or
-  // -writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.
-  NSException *exception = [NSException
-      exceptionWithName:@"UnimplementedMethod"
-                 reason:[NSString stringWithFormat:@"%@ is unimplemented",
-                                                   NSStringFromSelector(_cmd)]
-               userInfo:nil];
-  @throw exception;
-  return nil;
+- (BOOL)outlineView:(NSOutlineView*)outlineView isItemExpandable:(id)item {
+  PIPDFNode* node = item;
+  return node.children.count != 0;
 }
 
-- (BOOL)readFromData:(NSData *)data
-              ofType:(NSString *)typeName
-               error:(NSError **)outError {
-  // Insert code here to read your document from the given data of the specified
-  // type. If outError != NULL, ensure that you create and set an appropriate
-  // error when returning NO.
-  // You can also choose to override -readFromFileWrapper:ofType:error: or
-  // -readFromURL:ofType:error: instead.
-  // If you override either of these, you should also override
-  // -isEntireFileLoaded to return NO if the contents are lazily loaded.
-  NSException *exception = [NSException
-      exceptionWithName:@"UnimplementedMethod"
-                 reason:[NSString stringWithFormat:@"%@ is unimplemented",
-                                                   NSStringFromSelector(_cmd)]
-               userInfo:nil];
-  @throw exception;
-  return YES;
+- (id)outlineView:(NSOutlineView*)anOutlineView
+            child:(NSInteger)index
+           ofItem:(id)item {
+  PIPDFNode* node = item;
+  if (!node) {
+    node = self.document;
+  }
+
+  PIPDFNode* childNode = node.children[index];
+  return childNode;
+}
+
+- (id)outlineView:(NSOutlineView*)outlineView
+    objectValueForTableColumn:(NSTableColumn*)tableColumn
+                       byItem:(id)item {
+  PIPDFObject* PDFObject = item;
+  NSString* identifier = tableColumn.identifier;
+  if ([identifier isEqualToString:@"name"]) {
+    return PDFObject.name;
+  } else if ([identifier isEqualToString:@"typeName"]) {
+    return PDFObject.typeName;
+  }
+  return PDFObject.children.count == 0 ? PDFObject.stringRepresentation : @"";
 }
 
 @end
